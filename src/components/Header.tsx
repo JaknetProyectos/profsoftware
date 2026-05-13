@@ -1,20 +1,73 @@
 "use client";
 
-import { useState } from "react";
+import {
+  useState,
+  useTransition,
+} from "react";
+
 import Link from "next/link";
+
 import { useCart } from "@/context/CartContext";
+
+import {
+  useLocale,
+  useTranslations,
+} from "next-intl";
+
+import {
+  usePathname,
+  useRouter,
+} from "@/i18n/routing";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] =
     useState(false);
 
+  const [isLangOpen, setIsLangOpen] =
+    useState(false);
+
+  const [isPending, startTransition] =
+    useTransition();
+
   const { totalItems, toggleCart } =
     useCart();
+
+  const t = useTranslations("Header");
+
+  const locale = useLocale();
+
+  const router = useRouter();
+
+  const pathname = usePathname();
+
+  const languages = [
+    {
+      code: "en",
+      name: t("languages.en"),
+      flag: "🇺🇸",
+    },
+    {
+      code: "es",
+      name: t("languages.es"),
+      flag: "🇲🇽",
+    },
+  ];
+
+  const switchLanguage = (
+    nextLocale: string
+  ) => {
+    startTransition(() => {
+      router.replace(pathname, {
+        locale: nextLocale,
+      });
+    });
+
+    setIsLangOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 border-b border-[#7C3AED]/30 bg-[#0B0B14]/85 backdrop-blur-xl">
       {/* EVA accent line */}
-      
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -44,7 +97,7 @@ export default function Header() {
             </div>
 
             <span className="font-syne font-semibold text-lg bg-gradient-to-r from-[#C084FC] via-white to-[#FF5A36] bg-clip-text text-transparent">
-              CREATIVAWORKS
+              PLATAFORMA TECNOLÓGICA
             </span>
           </Link>
 
@@ -53,19 +106,21 @@ export default function Header() {
             {[
               {
                 href: "/",
-                label: "Home",
+                label: t("nav.home"),
               },
               {
                 href: "/#about",
-                label: "Us",
+                label: t("nav.us"),
               },
               {
                 href: "/#services",
-                label: "Services",
+                label: t(
+                  "nav.services"
+                ),
               },
               {
                 href: "/#contact",
-                label: "Contact",
+                label: t("nav.contact"),
               },
             ].map((item) => (
               <Link
@@ -80,6 +135,88 @@ export default function Header() {
                 </span>
               </Link>
             ))}
+
+            {/* Language Switch */}
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setIsLangOpen(
+                    !isLangOpen
+                  )
+                }
+                disabled={isPending}
+                className="flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition-all duration-300 hover:border-[#C084FC]/50 hover:bg-[#7C3AED]/10 hover:text-white"
+              >
+                <span>
+                  {
+                    languages.find(
+                      (lang) =>
+                        lang.code ===
+                        locale
+                    )?.flag
+                  }
+                </span>
+
+                <span>
+                  {locale.toUpperCase()}
+                </span>
+
+                <svg
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isLangOpen
+                      ? "rotate-180"
+                      : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute right-0 mt-3 w-44 overflow-hidden rounded-2xl border border-[#7C3AED]/20 bg-[#111827]/95 shadow-2xl backdrop-blur-xl">
+                  {languages.map(
+                    (language) => (
+                      <button
+                        key={
+                          language.code
+                        }
+                        onClick={() =>
+                          switchLanguage(
+                            language.code
+                          )
+                        }
+                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${
+                          locale ===
+                          language.code
+                            ? "bg-[#7C3AED]/20 text-white"
+                            : "text-white/75 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        <span>
+                          {
+                            language.flag
+                          }
+                        </span>
+
+                        <span>
+                          {
+                            language.name
+                          }
+                        </span>
+                      </button>
+                    )
+                  )}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Desktop Actions */}
@@ -89,7 +226,7 @@ export default function Header() {
               className="group relative overflow-hidden rounded-full border border-[#C084FC]/30 bg-gradient-to-r from-[#7C3AED] to-[#FF5A36] px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.45)]"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Quote
+                {t("quote")}
 
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -140,6 +277,66 @@ export default function Header() {
 
           {/* Mobile */}
           <div className="md:hidden flex items-center gap-3">
+            {/* Language */}
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setIsLangOpen(
+                    !isLangOpen
+                  )
+                }
+                disabled={isPending}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#7C3AED]/30 bg-white/5 text-white"
+              >
+                <span>
+                  {
+                    languages.find(
+                      (lang) =>
+                        lang.code ===
+                        locale
+                    )?.flag
+                  }
+                </span>
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute right-0 mt-3 w-40 overflow-hidden rounded-2xl border border-[#7C3AED]/20 bg-[#111827]/95 shadow-2xl backdrop-blur-xl">
+                  {languages.map(
+                    (language) => (
+                      <button
+                        key={
+                          language.code
+                        }
+                        onClick={() =>
+                          switchLanguage(
+                            language.code
+                          )
+                        }
+                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${
+                          locale ===
+                          language.code
+                            ? "bg-[#7C3AED]/20 text-white"
+                            : "text-white/75 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        <span>
+                          {
+                            language.flag
+                          }
+                        </span>
+
+                        <span>
+                          {
+                            language.name
+                          }
+                        </span>
+                      </button>
+                    )
+                  )}
+                </div>
+              )}
+            </div>
+
             {/* Cart */}
             <button
               onClick={toggleCart}
@@ -211,19 +408,23 @@ export default function Header() {
                 {[
                   {
                     href: "/",
-                    label: "Home",
+                    label: t("nav.home"),
                   },
                   {
                     href: "/#about",
-                    label: "Us",
+                    label: t("nav.us"),
                   },
                   {
                     href: "/#services",
-                    label: "Services",
+                    label: t(
+                      "nav.services"
+                    ),
                   },
                   {
                     href: "/#contact",
-                    label: "Contact",
+                    label: t(
+                      "nav.contact"
+                    ),
                   },
                 ].map((item) => (
                   <Link
@@ -244,7 +445,7 @@ export default function Header() {
                   href="/quote"
                   className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#FF5A36] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.35)]"
                 >
-                  Quote
+                  {t("quote")}
 
                   <svg
                     className="w-4 h-4"

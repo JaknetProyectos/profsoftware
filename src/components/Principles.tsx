@@ -1,26 +1,29 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Principles() {
+  const t = useTranslations("principles");
+
   const principles = [
     {
       number: 1,
-      title: "Innovation with purpose.",
-      description:
-        "We apply modern technology to generate concrete results.",
+      title: t("items.0.title"),
+      description: t("items.0.description"),
       accent: "from-lime-400 to-emerald-500",
       glow: "shadow-[0_0_35px_rgba(132,204,22,0.25)]",
     },
     {
       number: 2,
-      title: "Close collaboration.",
-      description:
-        "We understand your business before writing a single line of code.",
+      title: t("items.1.title"),
+      description: t("items.1.description"),
       accent: "from-orange-400 to-red-500",
       glow: "shadow-[0_0_35px_rgba(249,115,22,0.22)]",
     },
     {
       number: 3,
-      title: "Uncompromising quality.",
-      description:
-        "Every delivery goes through demanding standards of usability, security and performance.",
+      title: t("items.2.title"),
+      description: t("items.2.description"),
       accent: "from-fuchsia-500 to-violet-600",
       glow: "shadow-[0_0_35px_rgba(168,85,247,0.25)]",
     },
@@ -47,12 +50,12 @@ export default function Principles() {
             </div>
 
             <span className="text-sm font-semibold text-gray-700">
-              Core Principles
+              {t("badge")}
             </span>
           </div>
 
           <h2 className="font-syne font-semibold text-4xl md:text-5xl text-gray-900 leading-tight">
-            We Are Guided By Three Principles
+            {t("title")}
           </h2>
         </div>
 

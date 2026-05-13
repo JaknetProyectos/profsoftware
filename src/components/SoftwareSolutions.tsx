@@ -1,21 +1,24 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function SoftwareSolutions() {
+  const t = useTranslations("softwareSolutions");
+
   const principles = [
     {
-      title: "Innovation with purpose",
-      description:
-        "We apply modern technology to generate concrete results.",
+      title: t("principles.innovation.title"),
+      description: t("principles.innovation.description"),
       accent: "from-fuchsia-500 to-violet-600",
     },
     {
-      title: "Close collaboration",
-      description:
-        "We understand your business before writing a single line of code.",
+      title: t("principles.collaboration.title"),
+      description: t("principles.collaboration.description"),
       accent: "from-orange-400 to-red-500",
     },
     {
-      title: "Quality without compromise",
-      description:
-        "Each delivery goes through demanding standards of usability, security, and performance.",
+      title: t("principles.quality.title"),
+      description: t("principles.quality.description"),
       accent: "from-lime-400 to-emerald-500",
     },
   ];
@@ -41,16 +44,16 @@ export default function SoftwareSolutions() {
             </div>
 
             <span className="text-sm font-semibold text-gray-300">
-              Software Solutions
+              {t("badge")}
             </span>
           </div>
 
           <h2 className="font-syne font-semibold text-4xl md:text-6xl text-white leading-tight">
-            Software solutions
+            {t("titleLine1")}
             <br />
-            that transform
+            {t("titleLine2")}
             <br />
-            ideas into results
+            {t("titleLine3")}
           </h2>
         </div>
 
@@ -69,7 +72,7 @@ export default function SoftwareSolutions() {
               <div className="overflow-hidden rounded-2xl">
                 <img
                   src="https://ext.same-assets.com/2034627938/2116037978.png"
-                  alt="Team meeting"
+                  alt={t("imageAlt")}
                   className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>
@@ -80,25 +83,15 @@ export default function SoftwareSolutions() {
             {/* Text */}
             <div className="space-y-6 text-gray-300">
               <p className="leading-relaxed text-[15px] md:text-base">
-                At CreativaWorks, we believe that software doesn&apos;t
-                just solve problems: it transforms businesses. We are a
-                team of developers, designers, and strategists
-                passionate about creating technological solutions
-                tailored to your needs.
+                {t("description1")}
               </p>
 
               <p className="leading-relaxed text-[15px] md:text-base">
-                Since our inception, we have specialized in designing,
-                developing, and implementing custom software tailored
-                to the specific challenges of each client. Whether you
-                need a web platform, a mobile app, an internal tool,
-                or an automation solution, we work with you to
-                transform your ideas into functional, scalable, and
-                growth-ready systems.
+                {t("description2")}
               </p>
 
               <p className="font-semibold text-white text-lg">
-                We are guided by three principles:
+                {t("principlesTitle")}
               </p>
             </div>
           </div>
@@ -154,9 +147,7 @@ export default function SoftwareSolutions() {
               </div>
 
               <p className="text-gray-300 leading-relaxed text-[15px] md:text-base">
-                Today, we continue to grow alongside companies that,
-                like yours, see technology as a powerful tool for
-                evolution.
+                {t("footerText")}
               </p>
             </div>
           </div>

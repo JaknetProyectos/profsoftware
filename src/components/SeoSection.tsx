@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function SeoSection() {
+  const t = useTranslations("seo");
+
   return (
     <section className="relative overflow-hidden bg-[#120F1A] py-20 md:py-28">
       {/* Background glow */}
@@ -19,15 +25,16 @@ export default function SeoSection() {
         <div className="max-w-3xl mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#7d4cff]/20 bg-white/5 backdrop-blur px-4 py-2 mb-6">
             <div className="w-2 h-2 rounded-full bg-[#78ffb7]" />
+
             <span className="text-sm font-semibold text-[#b89cff]">
-              SEO & Digital Growth
+              {t("badge")}
             </span>
           </div>
 
           <h2 className="font-syne font-bold text-4xl md:text-6xl leading-tight text-white">
-            SEO focused
+            {t("title1")}
             <br />
-            on your success
+            {t("title2")}
           </h2>
         </div>
 
@@ -45,14 +52,14 @@ export default function SeoSection() {
                 </div>
 
                 <div className="text-xs text-gray-400 font-semibold">
-                  Growth Strategy
+                  {t("windowLabel")}
                 </div>
               </div>
 
               <div className="p-4">
                 <img
                   src="https://ext.same-assets.com/2034627938/2116037978.png"
-                  alt="Team meeting"
+                  alt={t("imageAlt")}
                   className="w-full h-auto object-cover rounded-2xl"
                 />
               </div>
@@ -62,21 +69,13 @@ export default function SeoSection() {
             <div className="mt-10 space-y-6">
               <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7">
                 <p className="text-gray-300 leading-relaxed text-lg">
-                  At CreativaWorks, we believe that software doesn&apos;t just
-                  solve problems: it transforms businesses. We are a team of
-                  developers, designers, and strategists passionate about
-                  creating technological solutions tailored to your needs.
+                  {t("description1")}
                 </p>
               </div>
 
               <div className="rounded-3xl border border-[#7d4cff]/20 bg-[#181125] p-7">
                 <p className="text-gray-400 leading-relaxed text-lg">
-                  Since our inception, we have specialized in designing,
-                  developing, and implementing custom software tailored to the
-                  specific challenges of each client. Whether you need a web
-                  platform, a mobile app, an internal tool, or an automation
-                  solution, we work with you to transform your ideas into
-                  functional, scalable, and growth-ready systems.
+                  {t("description2")}
                 </p>
               </div>
             </div>
@@ -106,12 +105,11 @@ export default function SeoSection() {
                 </div>
 
                 <h3 className="font-syne font-semibold text-2xl text-white mb-4">
-                  We are software specialists
+                  {t("card1.title")}
                 </h3>
 
                 <p className="text-gray-400 leading-relaxed">
-                  A team of passionate and committed developers creating digital
-                  solutions that solve real problems and empower businesses.
+                  {t("card1.description")}
                 </p>
               </div>
             </div>
@@ -138,13 +136,11 @@ export default function SeoSection() {
                 </div>
 
                 <h3 className="font-syne font-semibold text-2xl text-white mb-4">
-                  Innovation and results
+                  {t("card2.title")}
                 </h3>
 
                 <p className="text-gray-400 leading-relaxed">
-                  We create scalable, high-performance software that improves
-                  processes, optimizes resources, and generates tangible value
-                  for your company.
+                  {t("card2.description")}
                 </p>
               </div>
             </div>
@@ -153,21 +149,21 @@ export default function SeoSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                 <div className="text-3xl font-bold text-[#78ffb7] mb-2">
-                  SEO
+                  {t("metric1.title")}
                 </div>
 
                 <p className="text-sm text-gray-400 font-medium">
-                  Search visibility and positioning
+                  {t("metric1.description")}
                 </p>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                 <div className="text-3xl font-bold text-[#ff8a3d] mb-2">
-                  Growth
+                  {t("metric2.title")}
                 </div>
 
                 <p className="text-sm text-gray-400 font-medium">
-                  Scalable digital infrastructure
+                  {t("metric2.description")}
                 </p>
               </div>
             </div>

@@ -1,16 +1,20 @@
+import { useTranslations } from "next-intl";
+
 export default function SuccessStories() {
+  const t = useTranslations("successStories");
+
   const stories = [
     {
-      title: "Scalable ERP System for Manufacturing",
-      description: "Fragmented production processes and inventories.",
+      title: t("stories.erp.title"),
+      description: t("stories.erp.description"),
     },
     {
-      title: "Mobile App for Real-Time Logistics",
-      description: "No traceability of deliveries or real-time location.",
+      title: t("stories.logistics.title"),
+      description: t("stories.logistics.description"),
     },
     {
-      title: "Personalized E-Commerce with AI",
-      description: "Low conversion rate and high cart abandonment.",
+      title: t("stories.ecommerce.title"),
+      description: t("stories.ecommerce.description"),
     },
   ];
 
@@ -26,7 +30,7 @@ export default function SuccessStories() {
           </div>
 
           <h2 className="font-syne font-semibold text-4xl md:text-5xl text-white leading-tight">
-            Success Stories
+            {t("title")}
           </h2>
         </div>
 

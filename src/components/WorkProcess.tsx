@@ -1,24 +1,31 @@
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+
 export default function WorkProcess() {
+  const t = useTranslations("workProcess");
+  const locale = useLocale();
+
   const steps = [
     {
       number: "01",
-      title: "Analysis",
-      description: "We identify needs and key areas.",
+      title: t("steps.analysis.title"),
+      description: t("steps.analysis.description"),
     },
     {
       number: "02",
-      title: "Design",
-      description: "We created the solution architecture.",
+      title: t("steps.design.title"),
+      description: t("steps.design.description"),
     },
     {
       number: "03",
-      title: "Development",
-      description: "We build custom software.",
+      title: t("steps.development.title"),
+      description: t("steps.development.description"),
     },
     {
       number: "04",
-      title: "Optimization",
-      description: "We improved performance and scalability.",
+      title: t("steps.optimization.title"),
+      description: t("steps.optimization.description"),
     },
   ];
 
@@ -40,7 +47,7 @@ export default function WorkProcess() {
           </div>
 
           <h2 className="font-syne font-semibold text-4xl md:text-5xl text-white">
-            Work Process
+            {t("title")}
           </h2>
         </div>
 

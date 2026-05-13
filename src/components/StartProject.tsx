@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
 
 export default function StartProject() {
+  const t = useTranslations("startProject");
+
   const { addItem, openCart } = useCart();
 
   const [paymentData, setPaymentData] = useState({
@@ -44,8 +47,8 @@ export default function StartProject() {
     addItem({
       id: `custom-project-${Date.now()}`,
       name: paymentData.quoteId
-        ? `Project Quote #${paymentData.quoteId}`
-        : "Custom Project Payment",
+        ? `${t("cart.quotePrefix")} #${paymentData.quoteId}`
+        : t("cart.customPayment"),
       price: `$${amountNumber.toLocaleString(
         "en-US"
       )} USD`,
@@ -95,15 +98,13 @@ export default function StartProject() {
             </div>
 
             <h2 className="font-syne text-5xl md:text-7xl font-semibold text-white leading-[1.05] mb-8">
-              Personalize
+              {t("hero.title.line1")}
               <br />
-              your service
+              {t("hero.title.line2")}
             </h2>
 
             <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-              Not all of our services are exactly what
-              you need, but we can create a unique
-              alternative for you.
+              {t("hero.description")}
             </p>
 
             {/* EVA style panel */}
@@ -111,11 +112,11 @@ export default function StartProject() {
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <p className="text-sm text-gray-500 mb-1">
-                    Payment Flow
+                    {t("panel.paymentFlow")}
                   </p>
 
                   <h3 className="font-syne text-2xl font-semibold text-white">
-                    Custom Project
+                    {t("panel.customProject")}
                   </h3>
                 </div>
 
@@ -139,21 +140,21 @@ export default function StartProject() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
                   <p className="text-sm text-gray-500 mb-2">
-                    Secure Checkout
+                    {t("panel.secureCheckout.title")}
                   </p>
 
                   <p className="text-white font-semibold">
-                    Protected payment process
+                    {t("panel.secureCheckout.description")}
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
                   <p className="text-sm text-gray-500 mb-2">
-                    Personalized
+                    {t("panel.personalized.title")}
                   </p>
 
                   <p className="text-white font-semibold">
-                    Tailored to your needs
+                    {t("panel.personalized.description")}
                   </p>
                 </div>
               </div>
@@ -172,7 +173,7 @@ export default function StartProject() {
                 </div>
 
                 <span className="text-sm text-gray-400">
-                  Payment Details
+                  {t("form.windowTitle")}
                 </span>
 
                 <div className="w-12" />
@@ -186,7 +187,7 @@ export default function StartProject() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm text-gray-400 mb-2 block">
-                        Name
+                        {t("form.firstName")}
                       </label>
 
                       <input
@@ -202,7 +203,7 @@ export default function StartProject() {
 
                     <div>
                       <label className="text-sm text-gray-400 mb-2 block">
-                        Surnames
+                        {t("form.lastName")}
                       </label>
 
                       <input
@@ -219,7 +220,7 @@ export default function StartProject() {
 
                   <div>
                     <label className="text-sm text-gray-400 mb-2 block">
-                      Email
+                      {t("form.email")}
                     </label>
 
                     <input
@@ -235,7 +236,7 @@ export default function StartProject() {
 
                   <div>
                     <label className="text-sm text-gray-400 mb-2 block">
-                      Quote ID
+                      {t("form.quoteId")}
                     </label>
 
                     <input
@@ -250,7 +251,7 @@ export default function StartProject() {
 
                   <div>
                     <label className="text-sm text-gray-400 mb-2 block">
-                      Amount to Pay
+                      {t("form.amount")}
                     </label>
 
                     <div className="relative">
@@ -272,7 +273,7 @@ export default function StartProject() {
 
                   {success && (
                     <div className="rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-300">
-                      Project added to cart successfully.
+                      {t("form.success")}
                     </div>
                   )}
 
@@ -281,7 +282,7 @@ export default function StartProject() {
                     className="group relative overflow-hidden w-full rounded-2xl bg-[#FF6B6B] px-6 py-4 font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(255,107,107,0.35)]"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      Continue to payment
+                      {t("form.submit")}
 
                       <svg
                         className="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -301,9 +302,7 @@ export default function StartProject() {
                 </form>
 
                 <p className="text-gray-500 text-xs leading-relaxed mt-5">
-                  The final total is subject to 16%
-                  VAT. The amounts shown are values
-                  excluding tax.
+                  {t("form.footer")}
                 </p>
               </div>
             </div>
@@ -315,27 +314,24 @@ export default function StartProject() {
           <div className="grid md:grid-cols-2 gap-12 items-end">
             <div>
               <p className="text-sm text-gray-500 mb-4">
-                Launch your next digital experience
+                {t("cta.label")}
               </p>
 
               <h2 className="font-syne text-6xl md:text-8xl font-semibold leading-[0.95] text-white">
-                Start
+                {t("cta.title.line1")}
                 <br />
-                your project
+                {t("cta.title.line2")}
               </h2>
             </div>
 
             <div className="md:pb-3">
               <div className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8">
                 <h3 className="font-syne text-2xl font-semibold text-white mb-4">
-                  Do you have an idea in mind?
+                  {t("cta.card.title")}
                 </h3>
 
                 <p className="text-gray-400 leading-relaxed mb-8">
-                  We help companies build scalable
-                  software products with modern
-                  technologies and high-performance
-                  experiences.
+                  {t("cta.card.description")}
                 </p>
 
                 <Link
@@ -343,7 +339,7 @@ export default function StartProject() {
                   className="group inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-white transition-all hover:border-[#FF6B6B]/40 hover:bg-white/[0.08]"
                 >
                   <span className="font-semibold">
-                    Get a quote
+                    {t("cta.card.button")}
                   </span>
 
                   <svg

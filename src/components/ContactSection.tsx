@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useContact } from "@/hooks/use-contact";
 
 export default function ContactSection() {
+  const t = useTranslations("contactSection");
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -67,15 +70,13 @@ export default function ContactSection() {
             </div>
 
             <span className="text-sm text-gray-300 font-medium">
-              Contact CreativaWorks
+              {t("badge")}
             </span>
           </div>
 
           <div className="bg-[#F7F3EE] rounded-[32px] p-8 md:p-12 border border-black/5 shadow-[0_20px_80px_rgba(0,0,0,0.12)]">
-            <h2 className="font-syne font-semibold text-4xl md:text-6xl text-[#FF7A59] leading-[1.05] max-w-4xl">
-              Let&apos;s Build Your
-              <br />
-              Digital Solution
+            <h2 className="font-syne whitespace-pre-line font-semibold text-4xl md:text-6xl text-[#FF7A59] leading-[1.05] max-w-4xl">
+              {t("title")}
             </h2>
           </div>
         </div>
@@ -92,23 +93,22 @@ export default function ContactSection() {
               </div>
 
               <span className="text-sm text-gray-300 font-medium">
-                Start your project
+                {t("sidebar.badge")}
               </span>
             </div>
 
             <h3 className="font-syne font-semibold text-3xl text-white mb-4 leading-tight">
-              Let&apos;s Begin Now
+              {t("sidebar.title")}
             </h3>
 
             <p className="text-gray-400 leading-relaxed mb-10 text-[15px]">
-              Tell us about your business, your idea, or the software solution
-              you need. We&apos;ll help you build something scalable, modern,
-              and ready for growth.
+              {t("sidebar.description")}
             </p>
 
             <div className="space-y-5">
+              {/* Email */}
               <a
-                href="mailto:hereweare@creativaworks.com"
+                href="mailto:gestion@plataformatecnologica.com"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 hover:bg-white/[0.06] transition-all"
               >
                 <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-coral">
@@ -128,13 +128,17 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-400 mb-1">Email</p>
-                  <p className="text-white font-medium group-hover:text-coral transition-colors">
-                    hereweare@creativaworks.com
+                  <p className="text-sm text-gray-400 mb-1">
+                    {t("sidebar.emailLabel")}
+                  </p>
+
+                  <p className="text-white font-medium">
+                    gestion@plataformatecnologica.com
                   </p>
                 </div>
               </a>
 
+              {/* Phone */}
               <a
                 href="tel:+525521208017"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 hover:bg-white/[0.06] transition-all"
@@ -156,13 +160,17 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-400 mb-1">Telephone</p>
-                  <p className="text-white font-medium group-hover:text-coral transition-colors">
+                  <p className="text-sm text-gray-400 mb-1">
+                    {t("sidebar.phoneLabel")}
+                  </p>
+
+                  <p className="text-white font-medium">
                     +52 55 2120 8017
                   </p>
                 </div>
               </a>
 
+              {/* Office */}
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5">
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-coral flex-shrink-0">
@@ -178,22 +186,16 @@ export default function ContactSection() {
                         strokeWidth={2}
                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                       />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
                     </svg>
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-400 mb-1">Office</p>
+                    <p className="text-sm text-gray-400 mb-1">
+                      {t("sidebar.officeLabel")}
+                    </p>
 
                     <p className="text-white leading-relaxed text-sm">
-                      Av. Homero 203, Office 804, Floor 8 MZ,
-                      Col. Polanco V Section, Miguel Hidalgo
-                      Borough, CP 11560, Mexico City
+                      {t("sidebar.officeAddress")}
                     </p>
                   </div>
                 </div>
@@ -203,7 +205,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="mt-8 overflow-hidden rounded-[24px] border border-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6617366657!2d-99.19844682527832!3d19.43317034090901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201fe24a4c9af%3A0x8f5f5f5f5f5f5f!2sAv.%20Homero%20203%2C%20Polanco%2C%20Polanco%20V%20Secc%2C%20Miguel%20Hidalgo%2C%2011560%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1sen!2smx!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2029.3985427707971!2d-99.18562464998024!3d19.435618232551597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8ac0a2e2a3d%3A0xeb3501fc229e35a2!2sAv.%20Homero%20%23203-Oficina%20804%2C%20Piso%208%2C%20Chapultepec%20Morales%2C%20Polanco%20V%20Secc%2C%20Miguel%20Hidalgo%2C%2011570%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1778711846015!5m2!1ses-419!2smx"
                 width="100%"
                 height="260"
                 style={{ border: 0 }}
@@ -217,25 +219,23 @@ export default function ContactSection() {
 
           {/* Form */}
           <div className="relative bg-[#F7F3EE] rounded-[30px] border border-black/5 shadow-[0_20px_80px_rgba(0,0,0,0.14)] overflow-hidden">
-            {/* Top Bar */}
             <div className="flex items-center gap-2 px-6 py-4 border-b border-black/5 bg-white/60 backdrop-blur">
               <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
               <span className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
               <span className="w-3 h-3 rounded-full bg-[#28C840]" />
 
               <div className="ml-4 text-sm text-gray-500 font-medium">
-                Contact Form
+                {t("form.windowTitle")}
               </div>
             </div>
 
             <div className="p-8 md:p-10">
               <h4 className="font-syne font-semibold text-3xl text-gray-900 mb-3">
-                Complete your information
+                {t("form.title")}
               </h4>
 
               <p className="text-gray-600 leading-relaxed mb-8">
-                Send us your details and we&apos;ll get in touch shortly to
-                discuss your project.
+                {t("form.description")}
               </p>
 
               <form
@@ -246,20 +246,20 @@ export default function ContactSection() {
                   <input
                     name="name"
                     type="text"
-                    placeholder="Name"
+                    placeholder={t("form.name")}
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-coral focus:ring-4 focus:ring-coral/10"
+                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all"
                   />
 
                   <input
                     name="company"
                     type="text"
-                    placeholder="Company"
+                    placeholder={t("form.company")}
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-coral focus:ring-4 focus:ring-coral/10"
+                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all"
                   />
                 </div>
 
@@ -267,31 +267,31 @@ export default function ContactSection() {
                   <input
                     name="phone"
                     type="tel"
-                    placeholder="Phone"
+                    placeholder={t("form.phone")}
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-coral focus:ring-4 focus:ring-coral/10"
+                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all"
                   />
 
                   <input
                     name="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder={t("form.email")}
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-coral focus:ring-4 focus:ring-coral/10"
+                    className="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all"
                   />
                 </div>
 
                 <textarea
                   name="message"
-                  placeholder="Message"
+                  placeholder={t("form.message")}
                   rows={5}
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full resize-none rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-coral focus:ring-4 focus:ring-coral/10"
+                  className="w-full resize-none rounded-2xl border border-gray-200 bg-white px-5 py-4 text-gray-900 placeholder-gray-500 outline-none transition-all"
                 />
 
                 {error && (
@@ -302,17 +302,19 @@ export default function ContactSection() {
 
                 {success && (
                   <div className="rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
-                    Message sent successfully.
+                    {t("form.success")}
                   </div>
                 )}
 
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="group w-full rounded-2xl bg-[#FF7A59] px-6 py-4 text-white font-semibold transition-all hover:scale-[1.01] hover:shadow-[0_10px_40px_rgba(255,122,89,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group w-full rounded-2xl bg-[#FF7A59] px-6 py-4 text-white font-semibold transition-all hover:scale-[1.01]"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    {isLoading ? "Sending..." : "Send"}
+                    {isLoading
+                      ? t("form.sending")
+                      : t("form.send")}
 
                     {!isLoading && (
                       <svg

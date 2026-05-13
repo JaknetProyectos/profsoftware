@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const locale = useLocale();
+
   return (
     <footer className="relative overflow-hidden border-t border-[#6dffb3]/10 bg-[#09090f]">
       {/* Background */}
@@ -15,7 +21,10 @@ export default function Footer() {
         <div className="grid lg:grid-cols-[1.3fr_.8fr] gap-14 mb-14">
           {/* Company Info */}
           <div>
-            <Link href="/" className="inline-flex items-center gap-3 mb-7">
+            <Link
+              href={`/${locale}`}
+              className="inline-flex items-center gap-3 mb-7"
+            >
               <div className="relative">
                 <div className="absolute inset-0 bg-[#7c3aed] blur-xl opacity-70 rounded-full" />
 
@@ -26,7 +35,13 @@ export default function Footer() {
                     fill="none"
                     strokeWidth="2"
                   >
-                    <circle cx="12" cy="12" r="3" stroke="#ff5f1f" />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3"
+                      stroke="#ff5f1f"
+                    />
+
                     <path
                       stroke="#6dffb3"
                       d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
@@ -37,18 +52,17 @@ export default function Footer() {
 
               <div>
                 <span className="block text-white font-black tracking-[0.25em] text-xl">
-                  CREATIVAWORKS
+                  PLATAFORMA TECNOLÓGICA
                 </span>
+
                 <span className="text-xs uppercase tracking-[0.35em] text-[#6dffb3]">
-                  Digital Solutions
+                  {t("subtitle")}
                 </span>
               </div>
             </Link>
 
             <p className="text-gray-400 leading-relaxed max-w-xl text-[15px]">
-              Innovative, secure and scalable software solutions built to
-              transform ideas into powerful digital experiences for modern
-              businesses.
+              {t("description")}
             </p>
 
             <div className="mt-8 flex items-start gap-4 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-5">
@@ -65,6 +79,7 @@ export default function Footer() {
                     strokeWidth={2}
                     d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0L6.343 16.657a8 8 0 1111.314 0z"
                   />
+
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -76,12 +91,11 @@ export default function Footer() {
 
               <div>
                 <p className="text-white font-semibold mb-1">
-                  Mexico City Office
+                  {t("officeTitle")}
                 </p>
 
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Av. Homero 203, Office 804, Floor 8 MZ, Col. Polanco V
-                  Section, Miguel Hidalgo Borough, CP 11560, Mexico City
+                  {t("officeAddress")}
                 </p>
               </div>
             </div>
@@ -89,7 +103,7 @@ export default function Footer() {
             {/* Payment Methods */}
             <div className="mt-8">
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
-                Secure Payments
+                {t("securePayments")}
               </p>
 
               <div className="flex items-center gap-4 flex-wrap">
@@ -123,28 +137,29 @@ export default function Footer() {
             <div className="relative">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#6dffb3]/20 bg-[#6dffb3]/10 px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#6dffb3]" />
+
                 <span className="text-[#6dffb3] text-xs uppercase tracking-[0.3em]">
-                  Contact
+                  {t("contact")}
                 </span>
               </div>
 
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-500 text-xs uppercase tracking-[0.3em] mb-2">
-                    Email
+                    {t("email")}
                   </p>
 
                   <a
-                    href="mailto:aquiestamos@creativaworks.com"
+                    href="mailto:gestion@plataformatecnologica.com"
                     className="text-white hover:text-[#6dffb3] transition-colors text-lg font-medium break-all"
                   >
-                    aquiestamos@creativaworks.com
+                    gestion@plataformatecnologica.com
                   </a>
                 </div>
 
                 <div>
                   <p className="text-gray-500 text-xs uppercase tracking-[0.3em] mb-2">
-                    Telephone
+                    {t("telephone")}
                   </p>
 
                   <a
@@ -157,13 +172,11 @@ export default function Footer() {
 
                 <div>
                   <p className="text-gray-500 text-xs uppercase tracking-[0.3em] mb-2">
-                    Location
+                    {t("location")}
                   </p>
 
                   <p className="text-gray-300 leading-relaxed">
-                    Homero Street No. 203, Office 804, 8th Floor, MZ, Polanco V
-                    Section, Miguel Hidalgo Borough, CP 11560, Mexico City,
-                    Mexico
+                    {t("locationAddress")}
                   </p>
                 </div>
               </div>
@@ -178,7 +191,7 @@ export default function Footer() {
               <div className="w-2 h-2 rounded-full bg-[#6dffb3] animate-pulse" />
 
               <p className="text-gray-500 text-sm">
-                © 2024 CREATIVAWORKS. All rights reserved.
+                {t("copyright")}
               </p>
             </div>
 
@@ -187,21 +200,21 @@ export default function Footer() {
                 href="#"
                 className="text-gray-400 hover:text-[#6dffb3] transition-colors"
               >
-                Privacy Notice
+                {t("privacy")}
               </Link>
 
               <Link
                 href="#"
                 className="text-gray-400 hover:text-[#ff5f1f] transition-colors"
               >
-                Refund Policy
+                {t("refund")}
               </Link>
 
               <Link
                 href="#"
                 className="text-gray-400 hover:text-[#ff4f5e] transition-colors"
               >
-                Terms and Conditions
+                {t("terms")}
               </Link>
             </div>
           </div>

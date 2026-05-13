@@ -1,4 +1,92 @@
-export const services = [
+export const servicesSpanish = [
+    {
+        id: "essential-launch-guide",
+        icon: "document",
+        name: "Guía Esencial de Lanzamiento",
+        price: "200.00",
+        priceNumber: 200,
+    },
+    {
+        id: "express-launch",
+        icon: "security",
+        name: "Lanzamiento Exprés",
+        price: "350.00",
+        priceNumber: 350,
+    },
+    {
+        id: "exploratory-session",
+        icon: "cloud",
+        name: "Sesión Exploratoria",
+        price: "480.00",
+        priceNumber: 480,
+    },
+    {
+        id: "initial-plan",
+        icon: "users",
+        name: "Plan Inicial",
+        price: "900.00",
+        priceNumber: 900,
+    },
+    {
+        id: "digital-validation-pack",
+        icon: "validation",
+        name: "Paquete de Validación Digital",
+        price: "2,100.00",
+        priceNumber: 2100,
+    },
+    {
+        id: "digital-launch-kit",
+        icon: "launch",
+        name: "Kit de Lanzamiento Digital",
+        price: "3,750.00",
+        priceNumber: 3750,
+    },
+    {
+        id: "digital-boost-package",
+        icon: "api",
+        name: "Paquete de Impulso Digital",
+        price: "5,900.00",
+        priceNumber: 5900,
+    },
+    {
+        id: "digital-growth-package",
+        icon: "app",
+        name: "Paquete de Crecimiento Digital",
+        price: "7,350.00",
+        priceNumber: 7350,
+    },
+    {
+        id: "basic-startup-package",
+        icon: "startup",
+        name: "Paquete Básico para Startups",
+        price: "13,750.00",
+        priceNumber: 13750,
+    },
+    {
+        id: "starter-business-package",
+        icon: "business",
+        name: "Paquete Empresarial Inicial",
+        price: "22,500.00",
+        priceNumber: 22500,
+    },
+    {
+        id: "advanced-package-smes",
+        icon: "advanced",
+        name: "Paquete Avanzado para PYMES",
+        price: "34,000.00",
+        priceNumber: 34000,
+    },
+    {
+        id: "comprehensive-premium-package",
+        icon: "premium",
+        name: "Paquete Premium Integral",
+        price: "55,000.00",
+        priceNumber: 55000,
+    },
+];
+
+
+export const servicesEnglish = [
     {
         id: "essential-launch-guide",
         icon: "document",

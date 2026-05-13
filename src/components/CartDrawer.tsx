@@ -2,8 +2,11 @@
 
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function CartDrawer() {
+  const t = useTranslations("cartDrawer");
+
   const {
     items,
     isCartOpen,
@@ -43,11 +46,11 @@ export default function CartDrawer() {
             <div className="flex items-center justify-between px-6 py-5">
               <div>
                 <p className="text-sm text-gray-500 mb-1">
-                  Active Services
+                  {t("activeServices")}
                 </p>
 
                 <h2 className="font-syne text-2xl font-semibold text-white">
-                  Cart ({totalItems})
+                  {t("cart")} ({totalItems})
                 </h2>
               </div>
 
@@ -93,19 +96,18 @@ export default function CartDrawer() {
                 </div>
 
                 <h3 className="font-syne text-2xl font-semibold text-white mb-2">
-                  Your cart is empty
+                  {t("emptyTitle")}
                 </h3>
 
                 <p className="max-w-xs text-gray-500 leading-relaxed">
-                  Add software services and custom
-                  solutions to begin your project.
+                  {t("emptyDescription")}
                 </p>
 
                 <button
                   onClick={closeCart}
                   className="mt-8 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-white/20 hover:bg-white/10"
                 >
-                  Continue browsing
+                  {t("continueBrowsing")}
                 </button>
               </div>
             ) : (
@@ -226,7 +228,7 @@ export default function CartDrawer() {
 
                           <div className="text-right">
                             <p className="text-xs text-gray-500">
-                              Total
+                              {t("total")}
                             </p>
 
                             <p className="font-semibold text-white">
@@ -248,7 +250,7 @@ export default function CartDrawer() {
                   onClick={clearCart}
                   className="mt-2 text-sm text-gray-500 transition-colors hover:text-[#FF6B6B]"
                 >
-                  Clear all items
+                  {t("clearAll")}
                 </button>
               </div>
             )}
@@ -260,7 +262,7 @@ export default function CartDrawer() {
               <div className="mb-5 rounded-[24px] border border-white/10 bg-black/20 p-5">
                 <div className="mb-3 flex items-center justify-between">
                   <span className="text-gray-400">
-                    Subtotal
+                    {t("subtotal")}
                   </span>
 
                   <span className="font-syne text-2xl font-semibold text-white">
@@ -275,8 +277,7 @@ export default function CartDrawer() {
                 </div>
 
                 <p className="text-sm leading-relaxed text-gray-500">
-                  VAT (16%) will be calculated during
-                  checkout.
+                  {t("vatMessage")}
                 </p>
               </div>
 
@@ -286,7 +287,7 @@ export default function CartDrawer() {
                   onClick={closeCart}
                   className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-[#FF6B6B] px-6 py-4 font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(255,107,107,0.35)]"
                 >
-                  Proceed to Checkout
+                  {t("checkout")}
 
                   <svg
                     className="h-5 w-5 transition-transform group-hover:translate-x-1"
@@ -307,7 +308,7 @@ export default function CartDrawer() {
                   onClick={closeCart}
                   className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-semibold text-gray-300 transition-all hover:border-white/20 hover:bg-white/10 hover:text-white"
                 >
-                  Continue Shopping
+                  {t("continueShopping")}
                 </button>
               </div>
             </div>

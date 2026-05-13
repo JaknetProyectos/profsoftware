@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section
       id="home"
@@ -22,7 +28,7 @@ export default function Hero() {
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
 
               <div className="ml-4 text-sm text-gray-400 font-medium">
-                dashboard.tsx
+                {t("windowTitle")}
               </div>
             </div>
 
@@ -30,101 +36,25 @@ export default function Hero() {
             <div className="rounded-b-[28px] rounded-r-[28px] border border-white/10 bg-[#111118]/90 backdrop-blur-2xl p-8 md:p-10 shadow-2xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#7c3aed]/10 border border-[#7c3aed]/20 text-[#d8b4fe] text-sm font-medium mb-8">
                 <div className="w-2 h-2 rounded-full bg-[#84cc16] animate-pulse" />
-                Modern Software Development
+                {t("badge")}
               </div>
 
               <h1 className="font-syne font-semibold text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-white">
-                Build your
+                {t("title.start")}
                 <span className="block bg-gradient-to-r from-[#7c3aed] via-[#ff4fd8] to-[#ff5f1f] bg-clip-text text-transparent">
-                  digital presence
+                  {t("title.highlight")}
                 </span>
-                with scalable software
+                {t("title.end")}
               </h1>
 
               <p className="mt-8 text-lg text-gray-400 leading-relaxed max-w-2xl">
-                Enterprise-grade applications, AI
-                integrations and modern web experiences
-                designed for growth, performance and
-                premium user experiences.
+                {t("description")}
               </p>
-
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <button className="group relative overflow-hidden rounded-2xl px-7 py-4 font-semibold text-white">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed] via-[#c026d3] to-[#ff5f1f]" />
-
-                  <div className="relative flex items-center justify-center gap-2">
-                    Start Project
-
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <button className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors px-7 py-4 text-white font-semibold backdrop-blur-xl">
-                  View Services
-                </button>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-5 mt-12">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <div className="text-3xl font-semibold text-white">
-                    150+
-                  </div>
-
-                  <div className="text-sm text-gray-400 mt-1">
-                    Projects Delivered
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <div className="text-3xl font-semibold text-white">
-                    AI
-                  </div>
-
-                  <div className="text-sm text-gray-400 mt-1">
-                    Automation Systems
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                  <div className="text-3xl font-semibold text-white">
-                    24/7
-                  </div>
-
-                  <div className="text-sm text-gray-400 mt-1">
-                    Support & Scaling
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Right */}
           <div className="relative flex gap-5 items-end justify-center lg:justify-end">
-            {/* Team */}
-            <div className="hidden lg:block">
-              <div className="rounded-3xl border border-white/10 bg-[#111118]/90 p-3 backdrop-blur-xl">
-                <img
-                  src="https://ext.same-assets.com/2034627938/2114939479.png"
-                  alt="Team"
-                  className="w-20 h-20 rounded-2xl object-cover"
-                />
-              </div>
-            </div>
-
             {/* Analytics Card */}
             <div className="relative rounded-[32px] border border-white/10 bg-[#111118]/90 backdrop-blur-2xl p-6 shadow-2xl flex-1 max-w-sm overflow-hidden">
               {/* Top Bar */}
@@ -134,14 +64,14 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full bg-[#28c840]" />
 
                 <span className="ml-3 text-sm text-gray-400">
-                  analytics.json
+                  {t("analytics.file")}
                 </span>
               </div>
 
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <div className="text-sm text-gray-400 mb-1">
-                    Monthly Traffic
+                    {t("analytics.trafficLabel")}
                   </div>
 
                   <div className="flex items-end gap-3">
@@ -183,8 +113,8 @@ export default function Hero() {
               </div>
 
               <div className="flex justify-between mt-4 text-sm text-gray-500">
-                <span>Jan</span>
-                <span>Dec</span>
+                <span>{t("chart.start")}</span>
+                <span>{t("chart.end")}</span>
               </div>
             </div>
 
@@ -198,7 +128,7 @@ export default function Hero() {
               </div>
 
               <div className="text-sm text-gray-400 mb-4">
-                Visitors
+                {t("visitors.title")}
               </div>
 
               <div className="relative w-36 h-36 mx-auto">
@@ -242,7 +172,7 @@ export default function Hero() {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#7c3aed]" />
 
                     <span className="text-gray-300">
-                      Organic
+                      {t("visitors.organic")}
                     </span>
                   </div>
 
@@ -256,7 +186,7 @@ export default function Hero() {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#84cc16]" />
 
                     <span className="text-gray-300">
-                      Social
+                      {t("visitors.social")}
                     </span>
                   </div>
 

@@ -1,6 +1,20 @@
-import { solutions } from "@/lib/solutions";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import {
+  solutionsEnglish,
+  solutionsSpanish,
+} from "@/lib/solutions";
 
 export default function OurSolutions() {
+  const t = useTranslations("ourSolutions");
+  const locale = useLocale();
+
+  const solutions =
+    locale === "es"
+      ? solutionsSpanish
+      : solutionsEnglish;
+
   const getIcon = (type: string) => {
     const iconClass = "w-10 h-10 text-coral";
 
@@ -97,7 +111,7 @@ export default function OurSolutions() {
           </div>
 
           <h2 className="font-syne font-semibold text-4xl md:text-5xl text-gray-900 leading-tight">
-            Our Solutions
+            {t("title")}
           </h2>
         </div>
 
@@ -143,7 +157,7 @@ export default function OurSolutions() {
                 {/* Features */}
                 <div className="space-y-4">
                   <p className="text-sm font-semibold text-gray-900">
-                    Our service includes
+                    {t("includes")}
                   </p>
 
                   <ul className="space-y-3">
@@ -192,46 +206,32 @@ export default function OurSolutions() {
               </div>
 
               <h3 className="font-syne font-semibold text-3xl md:text-4xl text-gray-900 leading-tight mb-6">
-                Enterprise Resource Planning
-                <br />
-                (ERP) Systems Development
+                {t("erp.title")}
               </h3>
 
               <p className="text-gray-600 leading-relaxed max-w-3xl text-lg">
-                Centralize, automate, and control your
-                business operations with a custom ERP
-                system. At CreativaWorks, we develop
-                personalized ERP solutions that integrate
-                all your company&apos;s key areas into a
-                single system: finance, sales, inventory,
-                human resources, production, logistics,
-                and more.
+                {t("erp.description")}
               </p>
             </div>
 
             {/* Features */}
             <div className="grid md:grid-cols-2 gap-4">
-              {[
-                "Business process analysis to adapt the system to your actual workflow.",
-                "Modular and scalable development: the system grows with you.",
-                "Automation of repetitive tasks, real-time report generation.",
-                "Integration with external tools such as CRMs, accounting systems.",
-                "Security and access control customized by department or user.",
-                "Customized dashboards and reports for data-driven management.",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 rounded-2xl border border-black/5 bg-cream px-5 py-5"
-                >
-                  <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-coral text-white text-sm font-semibold flex-shrink-0">
-                    {index + 1}
-                  </div>
+              {t.raw("erp.features").map(
+                (item: string, index: number) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 rounded-2xl border border-black/5 bg-cream px-5 py-5"
+                  >
+                    <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-coral text-white text-sm font-semibold flex-shrink-0">
+                      {index + 1}
+                    </div>
 
-                  <p className="text-sm leading-relaxed text-gray-700">
-                    {item}
-                  </p>
-                </div>
-              ))}
+                    <p className="text-sm leading-relaxed text-gray-700">
+                      {item}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>

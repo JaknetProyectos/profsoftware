@@ -33,8 +33,8 @@ export async function POST(req: Request) {
      */
 
     await resend.emails.send({
-      from: "Eva-01 <soporte@sistemasavante.com>",
-      to: "soporte@sistemasavante.com",
+      from: "Plataforma Tecnológica <gestion@plataformatecnologica.com>",
+      to: "gestion@plataformatecnologica.com",
       subject: `Nuevo contacto de ${nombre}`,
 
       html: `
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
                 letter-spacing:3px;
                 font-size:12px;
               ">
-                EVA-01 ALERT
+                Plataforma Tecnológica ALERT
               </p>
 
               <h1 style="
@@ -141,7 +141,7 @@ export async function POST(req: Request) {
      */
 
     await resend.emails.send({
-      from: "Eva-01 <soporte@sistemasavante.com>",
+      from: "Plataforma Tecnológica <gestion@plataformatecnologica.com>",
       to: email,
       subject: "We received your message",
 
@@ -172,7 +172,7 @@ export async function POST(req: Request) {
                 letter-spacing:3px;
                 font-size:12px;
               ">
-                EVA-01 SYSTEM
+                Plataforma Tecnológica SYSTEM
               </p>
 
               <h1 style="

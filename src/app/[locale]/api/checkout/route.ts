@@ -106,7 +106,7 @@ function businessEmailHtml(
 
       <div style="background:linear-gradient(135deg,#FF4FD8 0%,#7C3AED 100%);padding:42px 36px;">
         <div style="font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#F5D0FE;">
-          EVA-01 BUSINESS ALERT
+          PLATAFORMA TECNOLÓGICA
         </div>
 
         <h1 style="margin:14px 0 0;font-size:38px;line-height:1;color:#fff;">
@@ -274,7 +274,7 @@ function clientEmailHtml(
 
       <div style="background:linear-gradient(135deg,#7C3AED 0%,#EC4899 100%);padding:42px 36px;">
         <div style="font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#F5D0FE;">
-          EVA-01 PAYMENT SYSTEM
+          PLATAFORMA TECNOLÓGICA SYSTEM
         </div>
 
         <h1 style="margin:14px 0 0;font-size:38px;line-height:1;color:#fff;">
@@ -378,7 +378,7 @@ function clientEmailHtml(
 
         <div style="margin-top:32px;text-align:center;">
           <p style="color:#71717A;font-size:13px;line-height:1.8;margin:0;">
-            Thank you for trusting EVA-01.<br />
+            Thank you for trusting on Plataforma Tecnológica.<br />
             Our team will contact you shortly to begin your project.
           </p>
         </div>
@@ -429,11 +429,11 @@ export async function POST(req: Request) {
 
     const businessEmail =
       process.env.BUSINESS_EMAIL ||
-      "soporte@sistemasavante.com";
+      "gestion@plataformatecnologica.com";
 
     const fromEmail =
       process.env.RESEND_FROM_EMAIL ||
-      "Eva-01 <soporte@sistemasavante.com>";
+      "Plataforma Tecnológica <gestion@plataformatecnologica.com>";
 
     const emailTasks =
       await Promise.allSettled([

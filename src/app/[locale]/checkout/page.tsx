@@ -11,7 +11,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 type CheckoutFormData = {
@@ -40,9 +40,11 @@ export default function CheckoutPage() {
   const [orderComplete, setOrderComplete] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<string>("");
-  const locale = useLocale();
 
-  const [formData, setFormData] = useState<CheckoutFormData>({
+  const locale = useLocale();
+  const t = useTranslations("Checkout");
+
+  const [formData, setFormData] = useState<CheckoutFormData>(() => ({
     firstName: "",
     lastName: "",
     email: "",
@@ -52,13 +54,16 @@ export default function CheckoutPage() {
     city: "",
     state: "",
     postalCode: "",
-    country: "Mexico",
+    country:
+      locale === "es"
+        ? t("form.defaultCountryEs")
+        : t("form.defaultCountryEn"),
     cardName: "",
     cardNumber: "",
     expiryMonth: "",
     expiryYear: "",
     cvv: "",
-  });
+  }));
 
   const vatAmount = useMemo(() => totalPrice * 0.16, [totalPrice]);
   const grandTotal = useMemo(
@@ -137,14 +142,14 @@ export default function CheckoutPage() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result?.error || "No se pudo completar el pago");
+        throw new Error(result?.error || t("errors.paymentFailed"));
       }
 
       clearCart();
       setOrderComplete(true);
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "Error desconocido";
+        err instanceof Error ? err.message : t("errors.unknown");
       setError(message);
     } finally {
       setIsProcessing(false);
@@ -179,21 +184,22 @@ export default function CheckoutPage() {
                 </div>
 
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#E9D5FF]">
-                  Payment completed
+                  {t("success.paymentCompleted")}
                 </div>
 
                 <h1 className="mt-6 font-syne font-bold text-4xl md:text-5xl text-white">
-                  Order Confirmed!
+                  {t("success.orderConfirmed")}
                 </h1>
 
                 <p className="mt-4 text-base md:text-lg text-white/70 max-w-xl mx-auto">
-                  Thank you for your purchase. We will contact you shortly to begin
-                  working on your project.
+                  {t("success.thankYou")}
                 </p>
 
                 {orderId && (
                   <div className="mt-8 rounded-2xl border border-white/10 bg-[#111827]/80 px-5 py-4 text-sm text-white/70">
-                    <span className="text-white/50">Order reference:</span>{" "}
+                    <span className="text-white/50">
+                      {t("success.orderReference")}
+                    </span>{" "}
                     <span className="font-semibold text-white">{orderId}</span>
                   </div>
                 )}
@@ -203,7 +209,7 @@ export default function CheckoutPage() {
                     href="/"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#C084FC] to-[#FF5A36] px-8 py-3.5 font-medium text-white shadow-[0_0_28px_rgba(124,58,237,0.35)] transition-transform hover:scale-[1.02]"
                   >
-                    Return to Home
+                    {t("actions.returnHome")}
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -257,15 +263,15 @@ export default function CheckoutPage() {
                 </div>
 
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-                  Cart empty
+                  {t("emptyCart.badge")}
                 </div>
 
                 <h1 className="mt-6 font-syne font-bold text-4xl md:text-5xl text-white">
-                  Your Cart is Empty
+                  {t("emptyCart.title")}
                 </h1>
 
                 <p className="mt-4 text-base md:text-lg text-white/70 max-w-xl mx-auto">
-                  Add some services to your cart before checking out.
+                  {t("emptyCart.description")}
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -273,7 +279,7 @@ export default function CheckoutPage() {
                     href="/#services"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#C084FC] to-[#FF5A36] px-8 py-3.5 font-medium text-white shadow-[0_0_28px_rgba(124,58,237,0.35)] transition-transform hover:scale-[1.02]"
                   >
-                    Browse Services
+                    {t("actions.browseServices")}
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -308,23 +314,22 @@ export default function CheckoutPage() {
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#E9D5FF]">
-                Secure checkout
+                {t("summary.badge")}
               </div>
 
               <h1 className="mt-5 font-syne font-bold text-4xl md:text-5xl text-white leading-tight">
-                Checkout
+                {t("summary.title")}
               </h1>
 
               <p className="mt-3 max-w-2xl text-white/70">
-                Review your order, complete your billing details, and finalize the
-                payment securely.
+                {t("summary.description")}
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-3 md:min-w-[360px]">
               <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">
-                  Items
+                  {t("summary.items")}
                 </div>
                 <div className="mt-1 text-lg font-semibold text-white">
                   {itemCount}
@@ -333,7 +338,7 @@ export default function CheckoutPage() {
 
               <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">
-                  Subtotal
+                  {t("summary.subtotal")}
                 </div>
                 <div className="mt-1 text-lg font-semibold text-white">
                   MXN ${" "}
@@ -345,7 +350,7 @@ export default function CheckoutPage() {
 
               <div className="rounded-2xl border border-[#7FFF00]/20 bg-[#7FFF00]/10 px-4 py-4 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/50">
-                  Total
+                  {t("summary.total")}
                 </div>
                 <div className="mt-1 text-lg font-semibold text-white">
                   MXN ${" "}
@@ -364,15 +369,15 @@ export default function CheckoutPage() {
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <h2 className="font-syne font-bold text-2xl text-white">
-                        Order Summary
+                        {t("orderSummary.title")}
                       </h2>
                       <p className="mt-1 text-sm text-white/60">
-                        Review the services added to your cart.
+                        {t("orderSummary.description")}
                       </p>
                     </div>
 
                     <div className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/70">
-                      {items.length} line{items.length !== 1 ? "s" : ""}
+                      {t("orderSummary.lines", { count: items.length })}
                     </div>
                   </div>
                 </div>
@@ -414,7 +419,7 @@ export default function CheckoutPage() {
                             <button
                               onClick={() => removeItem(item.id)}
                               className="self-start rounded-full border border-white/10 bg-white/5 p-2 text-white/50 transition-colors hover:border-[#FF5A36]/40 hover:bg-[#FF5A36]/10 hover:text-[#FF5A36]"
-                              aria-label="Remove item"
+                              aria-label={t("accessibility.removeItem")}
                             >
                               <svg
                                 className="w-4 h-4"
@@ -439,7 +444,7 @@ export default function CheckoutPage() {
                                   updateQuantity(item.id, item.quantity - 1)
                                 }
                                 className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-white/15"
-                                aria-label="Decrease quantity"
+                                aria-label={t("accessibility.decreaseQuantity")}
                               >
                                 <svg
                                   className="w-4 h-4"
@@ -465,7 +470,7 @@ export default function CheckoutPage() {
                                   updateQuantity(item.id, item.quantity + 1)
                                 }
                                 className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-white/15"
-                                aria-label="Increase quantity"
+                                aria-label={t("accessibility.increaseQuantity")}
                               >
                                 <svg
                                   className="w-4 h-4"
@@ -485,7 +490,7 @@ export default function CheckoutPage() {
 
                             <div className="text-right">
                               <div className="text-xs uppercase tracking-[0.2em] text-white/40">
-                                Line total
+                                {t("orderSummary.lineTotal")}
                               </div>
                               <div className="mt-1 font-semibold text-white">
                                 MXN ${" "}
@@ -505,7 +510,7 @@ export default function CheckoutPage() {
                   <div className="rounded-2xl border border-white/10 bg-[#111827]/70 p-5">
                     <div className="space-y-3">
                       <div className="flex justify-between text-white/65">
-                        <span>Subtotal</span>
+                        <span>{t("totals.subtotal")}</span>
                         <span>
                           MXN${" "}
                           {totalPrice.toLocaleString("en-US", {
@@ -515,7 +520,7 @@ export default function CheckoutPage() {
                       </div>
 
                       <div className="flex justify-between text-white/65">
-                        <span>VAT (16%)</span>
+                        <span>{t("totals.vat")}</span>
                         <span>
                           MXN${" "}
                           {vatAmount.toLocaleString("en-US", {
@@ -525,7 +530,7 @@ export default function CheckoutPage() {
                       </div>
 
                       <div className="flex justify-between border-t border-white/10 pt-4 text-lg font-bold text-white">
-                        <span>Total</span>
+                        <span>{t("totals.total")}</span>
                         <span>
                           MXN${" "}
                           {grandTotal.toLocaleString("en-US", {
@@ -542,10 +547,10 @@ export default function CheckoutPage() {
             <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl overflow-hidden">
               <div className="border-b border-white/10 px-6 md:px-8 py-6">
                 <h2 className="font-syne font-bold text-2xl text-white">
-                  Payment Information
+                  {t("payment.title")}
                 </h2>
                 <p className="mt-1 text-sm text-white/60">
-                  Fill in the details to complete your purchase.
+                  {t("payment.description")}
                 </p>
               </div>
 
@@ -559,14 +564,14 @@ export default function CheckoutPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="rounded-2xl border border-white/10 bg-[#111827]/60 p-5">
                     <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
-                      Contact Information
+                      {t("sections.contact")}
                     </h3>
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <input
                         name="firstName"
                         type="text"
-                        placeholder="First Name"
+                        placeholder={t("form.firstName")}
                         required
                         value={formData.firstName}
                         onChange={handleChange}
@@ -575,7 +580,7 @@ export default function CheckoutPage() {
                       <input
                         name="lastName"
                         type="text"
-                        placeholder="Last Name"
+                        placeholder={t("form.lastName")}
                         required
                         value={formData.lastName}
                         onChange={handleChange}
@@ -587,7 +592,7 @@ export default function CheckoutPage() {
                       <input
                         name="email"
                         type="email"
-                        placeholder="Email"
+                        placeholder={t("form.email")}
                         required
                         value={formData.email}
                         onChange={handleChange}
@@ -596,7 +601,7 @@ export default function CheckoutPage() {
                       <input
                         name="phone"
                         type="tel"
-                        placeholder="Phone"
+                        placeholder={t("form.phone")}
                         required
                         value={formData.phone}
                         onChange={handleChange}
@@ -607,7 +612,7 @@ export default function CheckoutPage() {
                     <input
                       name="company"
                       type="text"
-                      placeholder="Company (Optional)"
+                      placeholder={t("form.company")}
                       value={formData.company}
                       onChange={handleChange}
                       className="mt-4 w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 outline-none transition-all focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20"
@@ -616,13 +621,13 @@ export default function CheckoutPage() {
 
                   <div className="rounded-2xl border border-white/10 bg-[#111827]/60 p-5">
                     <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
-                      Billing Address
+                      {t("sections.billingAddress")}
                     </h3>
 
                     <input
                       name="address"
                       type="text"
-                      placeholder="Address"
+                      placeholder={t("form.address")}
                       required
                       value={formData.address}
                       onChange={handleChange}
@@ -633,7 +638,7 @@ export default function CheckoutPage() {
                       <input
                         name="city"
                         type="text"
-                        placeholder="City"
+                        placeholder={t("form.city")}
                         required
                         value={formData.city}
                         onChange={handleChange}
@@ -642,7 +647,7 @@ export default function CheckoutPage() {
                       <input
                         name="state"
                         type="text"
-                        placeholder="State"
+                        placeholder={t("form.state")}
                         required
                         value={formData.state}
                         onChange={handleChange}
@@ -654,7 +659,7 @@ export default function CheckoutPage() {
                       <input
                         name="postalCode"
                         type="text"
-                        placeholder="Postal Code"
+                        placeholder={t("form.postalCode")}
                         required
                         value={formData.postalCode}
                         onChange={handleChange}
@@ -663,7 +668,7 @@ export default function CheckoutPage() {
                       <input
                         name="country"
                         type="text"
-                        placeholder="Country"
+                        placeholder={t("form.country")}
                         required
                         value={formData.country}
                         onChange={handleChange}
@@ -674,13 +679,13 @@ export default function CheckoutPage() {
 
                   <div className="rounded-2xl border border-white/10 bg-[#111827]/60 p-5">
                     <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
-                      Card Information
+                      {t("sections.cardInformation")}
                     </h3>
 
                     <input
                       name="cardName"
                       type="text"
-                      placeholder="Name on Card"
+                      placeholder={t("form.nameOnCard")}
                       required
                       value={formData.cardName}
                       onChange={handleChange}
@@ -690,7 +695,7 @@ export default function CheckoutPage() {
                     <input
                       name="cardNumber"
                       type="text"
-                      placeholder="Card Number"
+                      placeholder={t("form.cardNumber")}
                       required
                       maxLength={16}
                       inputMode="numeric"
@@ -704,7 +709,7 @@ export default function CheckoutPage() {
                       <input
                         name="expiryMonth"
                         type="text"
-                        placeholder="MM"
+                        placeholder={t("form.expiryMonth")}
                         required
                         inputMode="numeric"
                         autoComplete="cc-exp-month"
@@ -715,7 +720,7 @@ export default function CheckoutPage() {
                       <input
                         name="expiryYear"
                         type="text"
-                        placeholder="YYYY"
+                        placeholder={t("form.expiryYear")}
                         required
                         inputMode="numeric"
                         autoComplete="cc-exp-year"
@@ -726,7 +731,7 @@ export default function CheckoutPage() {
                       <input
                         name="cvv"
                         type="password"
-                        placeholder="CVV"
+                        placeholder={t("form.cvv")}
                         required
                         inputMode="numeric"
                         autoComplete="cc-csc"
@@ -739,17 +744,35 @@ export default function CheckoutPage() {
 
                   <div className="rounded-2xl border border-[#7C3AED]/20 bg-gradient-to-r from-[#7C3AED]/10 via-[#C084FC]/10 to-[#FF5A36]/10 px-4 py-3 text-sm text-white/75">
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                      <span>Payment reference</span>
+                      <span>{t("paymentReference.label")}</span>
                       <span className="font-medium text-white">
-                        {orderId || "Generated at checkout"}
+                        {orderId || t("paymentReference.generated")}
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4 justify-center px-6 py-4 border-t border-white/10">
-                    <Image src="/visa.png" alt="Etomin" width={50} height={40} className="" />
-                    <Image src="/mastercard.png" alt="Etomin" width={50} height={40} className="" />
-                    <Image src="/octano.png" alt="Etomin" width={150} height={40} className="" />
+                    <Image
+                      src="/visa.png"
+                      alt={t("paymentMethods.visa")}
+                      width={50}
+                      height={40}
+                      className=""
+                    />
+                    <Image
+                      src="/mastercard.png"
+                      alt={t("paymentMethods.mastercard")}
+                      width={50}
+                      height={40}
+                      className=""
+                    />
+                    <Image
+                      src="/octano.png"
+                      alt={t("paymentMethods.octano")}
+                      width={150}
+                      height={40}
+                      className=""
+                    />
                   </div>
 
                   <button
@@ -778,11 +801,11 @@ export default function CheckoutPage() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           />
                         </svg>
-                        Processing...
+                        {t("actions.processing")}
                       </span>
                     ) : (
                       <span className="inline-flex items-center justify-center gap-2">
-                        Complete Purchase - MXN${" "}
+                        {t("actions.completePurchase")} MXN${" "}
                         {grandTotal.toLocaleString("en-US", {
                           minimumFractionDigits: 2,
                         })}
@@ -804,8 +827,7 @@ export default function CheckoutPage() {
                   </button>
 
                   <p className="text-xs text-white/45 text-center leading-relaxed">
-                    By completing this purchase, you agree to our Terms and
-                    Conditions and Privacy Policy.
+                    {t("terms.notice")}
                   </p>
                 </form>
               </div>

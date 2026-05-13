@@ -1,357 +1,435 @@
 {
-  "cart": {
-    "header": {
-      "titlePrefix": "Tu",
-      "titleHighlight": "Cesta"
+  "Header": {
+    "nav": {
+      "home": "Inicio",
+      "us": "Nosotros",
+      "services": "Servicios",
+      "contact": "Contacto"
     },
+    "quote": "Cotizar",
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "Checkout": {
     "success": {
-      "title": "¡Compra Realizada!",
-      "description": "Tu solicitud ha sido gestionada bajo el protocolo de protección vigente.",
-      "orderIdLabel": "Referencia:",
-      "emailSent": "✓ Recibo enviado a tu casilla de correo.",
-      "emailFailed": "⚠ Cobro efectuado, pero el servidor de envíos presenta demoras.",
-      "backHome": "Regresar al inicio"
+      "paymentCompleted": "Pago completado",
+      "orderConfirmed": "¡Pedido confirmado!",
+      "thankYou": "Gracias por tu compra. Te contactaremos en breve para comenzar a trabajar en tu proyecto.",
+      "orderReference": "Referencia del pedido:"
     },
-    "empty": {
-      "title": "La cesta está desierta",
-      "description": "Aún no has agregado ninguna unidad de potencia a tu selección.",
-      "cta": "Ver Soluciones"
-    },
-    "review": {
-      "title": "Detalles de la Compra",
-      "clearAll": "Borrar contenido",
-      "sku": "Referencia:"
-    },
-    "shipping": {
-      "title": "Datos de Entrega",
-      "firstName": "Nombre",
-      "lastName": "Apellidos",
-      "email": "Correo electrónico",
-      "phone": "Contacto Telefónico",
-      "postalCode": "Código Postal",
-      "address": "Dirección",
-      "city": "Ciudad",
-      "state": "Provincia/Estado"
-    },
-    "payment": {
-      "title": "Pasarela de Pago Blindada",
-      "cardName": "Titular de la Tarjeta",
-      "cardNumber": "Dígitos de la Tarjeta",
-      "cardNumberPlaceholder": "0000 0000 0000 0000",
-      "expiration": "Vencimiento (MM/AA)",
-      "cvv": "Código CVV"
+    "emptyCart": {
+      "badge": "Carrito vacío",
+      "title": "Tu carrito está vacío",
+      "description": "Agrega algunos servicios a tu carrito antes de pagar."
     },
     "summary": {
-      "titlePrefix": "Cómputo",
-      "titleHighlight": "Final",
-      "subtotal": "Suma parcial",
-      "iva": "Impuesto (16%)",
-      "totalLabel": "Monto total",
-      "secureConnection": "Enlace Cifrado",
-      "currencyLabel": "Moneda de Operación",
-      "currencyMXN": "Peso de México (MXN)",
-      "currencyUSD": "Dólar de EE.UU. (USD)",
-      "processing": "Ejecutando...",
-      "checkout": "Pagar Ahora"
+      "badge": "Pago seguro",
+      "title": "Checkout",
+      "description": "Revisa tu pedido, completa tus datos de facturación y finaliza el pago de forma segura.",
+      "items": "Artículos",
+      "subtotal": "Subtotal",
+      "total": "Total"
     },
-    "errors": {
-      "firstNameRequired": "Es necesario el nombre.",
-      "lastNameRequired": "Es necesario el apellido.",
-      "emailRequired": "Se requiere una dirección de correo.",
-      "emailInvalid": "Formato de correo no válido.",
-      "phoneRequired": "Indica un número de contacto.",
-      "phoneInvalid": "El contacto debe oscilar entre 7 y 15 cifras.",
-      "addressRequired": "Escribe la ubicación.",
-      "cityRequired": "Escribe la localidad.",
-      "stateRequired": "Escribe la región.",
-      "countryRequired": "Elige el país.",
-      "postalCodeRequired": "Indica el código de zona.",
-      "postalCodeInvalid": "El código postal debe tener de 4 a 6 cifras.",
-      "currencyRequired": "Escoge el tipo de moneda.",
-      "cardNameRequired": "Indica quién es el titular.",
-      "cardNumberRequired": "Indica el número del plástico.",
-      "cardNumberInvalid": "La numeración debe ser de 16 caracteres exactamente.",
-      "cardMonthRequired": "Indica el mes.",
-      "cardMonthInvalid": "Rango de mes erróneo (01-12).",
-      "cardYearRequired": "Indica el año.",
-      "cardYearInvalid": "El año requiere 4 cifras.",
-      "cvvRequired": "Escribe el código de seguridad.",
-      "cvvInvalid": "El CVV requiere 3 o 4 cifras.",
-      "cartEmpty": "No hay artículos en la cesta.",
-      "transactionError": "Ocurrió un fallo al ejecutar el cobro."
-    }
-  },
-  "Navigation": {
-    "brand": {
-      "infrastructure": "Sistemas de Alta Gama"
+    "orderSummary": {
+      "title": "Resumen del pedido",
+      "description": "Revisa los servicios agregados a tu carrito.",
+      "lines": "{count, plural, one {# línea} other {# líneas}}",
+      "lineTotal": "Total de la línea"
     },
-    "nav": {
-      "home": "Principal",
-      "about": "Empresa",
-      "services": "Portafolio",
-      "plans": "Paquetes",
-      "contact": "Escríbenos"
+    "payment": {
+      "title": "Información de pago",
+      "description": "Completa los datos para finalizar tu compra."
     },
-    "languages": {
-      "en": "English",
-      "es": "Spanish"
-    },
-    "mobile": {
-      "selectLanguage": "Cambiar Lenguaje"
-    }
-  },
-  "HeroSection": {
-    "badge": "Un gusto saludarte",
-    "title": {
-      "before": "Servicios de Alojamiento de",
-      "highlight": "Garantía"
-    },
-    "description": "Nuestros especialistas <white>Jedi</white> velan por darte una asistencia superior, logrando que tu portal web permanezca activo y rinda óptimamente, tal como un <green>mecanismo</green> de precisión en la red.",
-    "buttons": {
-      "startProject": "Comenzar Ahora",
-      "viewPlans": "Explorar Costos"
-    },
-    "scroll": "Bajar",
-    "imageAlt": "Cohete de Infraestructura"
-  },
-  "ServicesSection": {
-    "badge": "Arquitectura Vital",
-    "title": {
-      "before": "Nuestros",
-      "highlight": "Productos"
-    },
-    "description": "Herramientas de puesta en marcha inmediata con respaldo total."
-  },
-  "WhyChooseUsSection": {
-    "badge": "Liderando la vanguardia",
-    "title": {
-      "before": "Ventajas de",
-      "highlight": "Nosotros"
-    },
-    "description": "En <white>Sistemas Avante</white>, resaltamos por nuestro trato exclusivo, herramientas modernas y tarifas competitivas. Como custodios de tu entorno virtual, trabajamos para darte una fiabilidad digna de un <green>asistente robótico</green> y la rapidez de un <orange>viaje interestelar</orange>.",
-    "benefits": {
-      "support": "Asistencia de Élite",
-      "security": "Protección Proactiva",
-      "uptime": "99.9% Disponibilidad Permanente"
-    },
-    "verified": "Validado",
-    "cta": "Adquirir Ya",
-    "status": {
-      "label": "Estado",
-      "value": "Sistemas OPERATIVOS"
-    }
-  },
-  "PlansSection": {
-    "badge": "Células de Alto Rendimiento",
-    "title": {
-      "before": "Nuestros",
-      "highlight": "Modelos"
-    },
-    "description": "Creados para cubrir los requerimientos de diversos emprendimientos, desde proyectos novatos hasta firmas que desean potenciar su alcance web. <italic>¡Que la potencia de Sistemas Avante te respalde!</italic>",
-    "recommended": "Sugerido",
-    "plusVat": "+ Impuestos",
-    "specifications": "Ficha Técnica",
-    "addToCart": "Sumar a la Cesta",
-    "custom": {
-      "title": {
-        "before": "Plan",
-        "highlight": "A Medida"
-      },
-      "description": "Tarifa personalizada según los requisitos del cliente.",
-      "button": "Pedir Presupuesto"
-    }
-  },
-  "AdditionalServices": {
-    "title1": "Complementos de",
-    "titleHighlight": "Soporte",
-    "description": "Potencia las virtudes de tu sistema. Utilidades pensadas para perfeccionar, blindar y expandir tu huella digital al nivel más alto.",
-    "addons": "Extensiones Disponibles",
-    "status": "Estado: Listo para Instalar",
-    "serial": "Nº Serie:",
-    "addToCart": "Sumar a la Cesta"
-  },
-  "FAQ": {
-    "badge": "Consulta de Datos / FAQ",
-    "title": "Dudas",
-    "titleHighlight": "Comunes",
-    "description": "Manual de respuesta inmediata para aclarar tus inquietudes sobre nuestros servicios y estructura técnica.",
-    "knowledgeBase": "Repositorio_Datos v2.0",
-    "imageAlt": "Centro de información técnica"
-  },
-  "Footer": {
-    "mission": "Nuestro grupo de maestros Jedi se dedica a ofrecerte el mejor trato, asegurando que tu plataforma esté siempre en línea y opere sin fallos, como un sistema perfectamente calibrado en la red.",
-    "navigation": "Menú",
-    "home": "Inicio",
-    "about": "Nosotros",
-    "services": "Servicios",
-    "plans": "Tarifas",
-    "contact": "Contacto",
-    "infrastructure": "Equipamiento",
-    "sharedHosting": "Hosting Grupal",
-    "vpsHosting": "Hosting Virtual (VPS)",
-    "dedicatedHosting": "Hosting Exclusivo",
-    "hqTerminal": "Nodo Central",
-    "securePayments": "Métodos de Pago Protegidos",
-    "pciCompliant": "Normativa PCI-DSS",
-    "copyright": "Derechos de Autor Reservados.",
-    "refund": "Devoluciones",
-    "terms": "Condiciones",
-    "privacy": "Confidencialidad",
-    "refundPolicy": "Normas de Reembolso",
-    "termsPolicy": "Términos del Servicio",
-    "privacyPolicy": "Aviso de Privacidad",
-    "secureTerminal": "Acceso Cifrado"
-  },
-  "ContactPage": {
-    "hero": {
-      "badge": "Vía de Enlace / Conexión",
-      "title": "Canal de <orange>Soporte</orange><green>.</green>",
-      "description": "¿Requieres ayuda o tienes preguntas técnicas? Establece contacto con nuestro centro de atención. Estamos preparados para asistirte."
+    "sections": {
+      "contact": "Información de contacto",
+      "billingAddress": "Dirección de facturación",
+      "cardInformation": "Información de la tarjeta"
     },
     "form": {
-      "title": "Enviar Mensaje",
-      "nameLabel": "Usuario / Nombre",
-      "namePlaceholder": "Escribe tu nombre aquí",
-      "emailLabel": "Contacto / Correo",
-      "emailPlaceholder": "usuario@dominio.com",
-      "subjectLabel": "Motivo del Contacto",
-      "subjectPlaceholder": "Ej. Dudas / Contrataciones",
-      "messageLabel": "Contenido",
-      "messagePlaceholder": "Describe tu requerimiento...",
-      "submit": "Transmitir Datos"
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "company": "Empresa (Opcional)",
+      "address": "Dirección",
+      "city": "Ciudad",
+      "state": "Estado",
+      "postalCode": "Código postal",
+      "country": "País",
+      "nameOnCard": "Nombre en la tarjeta",
+      "cardNumber": "Número de tarjeta",
+      "expiryMonth": "MM",
+      "expiryYear": "YYYY",
+      "cvv": "CVV",
+      "defaultCountryEs": "México",
+      "defaultCountryEn": "Mexico"
     },
-    "success": {
-      "title": "¡Envío Exitoso!",
-      "description": "Se ha activado el proceso de respuesta."
+    "paymentReference": {
+      "label": "Referencia de pago",
+      "generated": "Se genera al finalizar la compra"
     },
-    "contact": {
-      "title": "Puntos de Encuentro",
-      "phoneTitle": "Línea Telefónica",
-      "emailTitle": "Buzón de Mensajería",
-      "addressTitle": "Ubicación de la Base"
+    "paymentMethods": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "octano": "Octano"
     },
-    "status": {
-      "online": "Asistencia Activa",
-      "response": "Espera estimada: < 2h",
-      "server": "Salud de la Red",
-      "optimal": "ESTABLE"
+    "actions": {
+      "returnHome": "Volver al inicio",
+      "browseServices": "Ver servicios",
+      "processing": "Procesando...",
+      "completePurchase": "Completar compra - MXN$"
     },
-    "alert": {
-      "errorTitle": "Fallo",
-      "errorMessage": "Error en la secuencia de envío"
+    "totals": {
+      "subtotal": "Subtotal",
+      "vat": "IVA (16%)",
+      "total": "Total"
+    },
+    "terms": {
+      "notice": "Al completar esta compra, aceptas nuestros Términos y condiciones y nuestra Política de privacidad."
+    },
+    "accessibility": {
+      "removeItem": "Eliminar artículo",
+      "decreaseQuantity": "Disminuir cantidad",
+      "increaseQuantity": "Aumentar cantidad"
+    },
+    "errors": {
+      "paymentFailed": "No se pudo completar el pago",
+      "unknown": "Error desconocido"
     }
   },
-  "AboutPage": {
+  "CustomProject": {
     "hero": {
-      "badge": "Información / Identidad",
-      "title": "Quiénes <orange>Somos</orange><green>.</green>"
+      "badge": "Desarrollo Personalizado Premium",
+      "title": "Crea tu",
+      "titleHighlight": "próximo software",
+      "titleEnd": " proyecto",
+      "description": "Plataformas empresariales, automatizaciones con IA, aplicaciones móviles y sistemas escalables diseñados específicamente para los objetivos de tu negocio."
     },
-    "imageAlt": "Centro de Operaciones",
-    "floatingBadge": "Núcleo Activo",
-    "content": {
-      "title": "Nuestra Diferencia",
-      "description": "En Sistemas Avante, nos distinguimos por un soporte excepcional, herramientas tecnológicas de punta y costos competitivos. Como protectores de tu activo digital, buscamos darte un servicio tan constante como un <green>droide de apoyo</green> y tan veloz como una <orange>propulsión luz</orange>."
+    "solutions": {
+      "badge": "Soluciones a Medida",
+      "title": "¿Qué podemos",
+      "titleHighlight": "construir para ti?",
+      "description": "Cada proyecto personalizado está diseñado para rendimiento, escalabilidad y experiencias modernas de usuario."
     },
-    "benefits": {
-      "title": "Virtudes de Red",
-      "items": {
-        "support": "Atención Estelar",
-        "security": "Blindaje de Datos",
-        "uptime": "99.9% Tiempo de Actividad"
+    "cards": {
+      "web": {
+        "title": "Plataformas Web",
+        "description": "SaaS personalizados, dashboards, sistemas administrativos y arquitectura cloud escalable."
+      },
+      "mobile": {
+        "title": "Aplicaciones Móviles",
+        "description": "Experiencias iOS y Android de alto rendimiento con interfaces elegantes."
+      },
+      "ai": {
+        "title": "Integraciones IA",
+        "description": "Agentes IA, automatizaciones, chatbots y flujos de trabajo inteligentes."
+      }
+    },
+    "form": {
+      "badge": "Cotización Personalizada",
+      "title": "Detalles del Proyecto",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "email": "Correo Electrónico",
+      "service": "Servicio Requerido",
+      "projectDetails": "Detalles del Proyecto",
+      "quoteId": "ID de Cotización",
+      "amount": "Monto a Pagar",
+      "submit": "Agregar Proyecto Personalizado",
+      "selectService": "Selecciona un servicio",
+      "placeholders": {
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "email": "juan@empresa.com",
+        "details": "Cuéntanos sobre tu idea, objetivos, funcionalidades y necesidades del negocio...",
+        "quoteId": "Opcional",
+        "amount": "$5,000"
+      }
+    },
+    "services": {
+      "webPlatform": "Plataforma Web",
+      "mobileApp": "Aplicación Móvil",
+      "aiAutomation": "Automatización IA",
+      "ecommerce": "E-commerce",
+      "customSoftware": "Software Personalizado"
+    },
+    "success": "Tu proyecto personalizado fue agregado al carrito correctamente.",
+    "footer": "Experiencia segura de checkout personalizado con infraestructura escalable y procesamiento moderno de pagos.",
+    "cart": {
+      "customProjectName": "Proyecto Personalizado de {service}",
+      "defaultProjectName": "Proyecto de Software Personalizado"
+    }
+  },
+  "Hero": {
+    "badge": "Desarrollo de Software Moderno",
+    "windowTitle": "dashboard.tsx",
+    "title": {
+      "start": "Construye tu",
+      "highlight": "presencia digital",
+      "end": "con software escalable"
+    },
+    "description": "Aplicaciones empresariales, integraciones con IA y experiencias web modernas diseñadas para crecimiento, rendimiento y experiencias premium para tus usuarios.",
+    "analytics": {
+      "file": "analytics.json",
+      "trafficLabel": "Tráfico Mensual"
+    },
+    "chart": {
+      "start": "Ene",
+      "end": "Dic"
+    },
+    "visitors": {
+      "title": "Visitantes",
+      "organic": "Orgánico",
+      "social": "Social"
+    }
+  },
+  "AboutUs": {
+    "badge": "Sobre Nuestra Empresa",
+    "title": "Construimos productos digitales escalables con tecnología moderna.",
+    "description": "Creamos experiencias de software de alto rendimiento enfocadas en escalabilidad, diseño y crecimiento empresarial para compañías modernas.",
+    "windowTitle": "Resumen de la Empresa",
+    "cards": {
+      "innovation": {
+        "title": "Innovación Primero",
+        "description": "Nuestra visión es convertirnos en el socio tecnológico de confianza para empresas de todas las industrias, desarrollando software innovador que ayude a las marcas a desbloquear su potencial digital."
+      },
+      "growth": {
+        "title": "Enfoque en Crecimiento",
+        "description": "Medimos nuestro éxito a través del éxito de nuestros clientes, apoyándolos en cada etapa con sistemas escalables, automatización y experiencias digitales modernas."
       }
     }
   },
-  "customPage": {
-    "badge": "Ajuste de Configuración v2.0",
-    "title": {
-      "part1": "Servicio",
-      "highlight": "Exclusivo"
+  "seo": {
+    "badge": "SEO y Crecimiento Digital",
+    "title1": "SEO enfocado",
+    "title2": "en tu éxito",
+    "windowLabel": "Estrategia de Crecimiento",
+    "imageAlt": "Reunión de equipo",
+    "description1": "En Plataforma Tecnológica creemos que el software no solo resuelve problemas: transforma negocios. Somos un equipo de desarrolladores, diseñadores y estrategas apasionados por crear soluciones tecnológicas adaptadas a tus necesidades.",
+    "description2": "Desde nuestros inicios nos hemos especializado en diseñar, desarrollar e implementar software personalizado adaptado a los desafíos específicos de cada cliente. Ya sea que necesites una plataforma web, una app móvil, una herramienta interna o una solución de automatización, trabajamos contigo para transformar tus ideas en sistemas funcionales, escalables y preparados para crecer.",
+    "card1": {
+      "title": "Somos especialistas en software",
+      "description": "Un equipo apasionado y comprometido creando soluciones digitales que resuelven problemas reales e impulsan negocios."
     },
-    "description": "Carga los datos de tu presupuesto particular para iniciar el cobro mediante el túnel seguro. Confirma que el número de ticket concuerde con el de tu ejecutivo.",
-    "imageAlt": "Módulo de soporte",
-    "securePayment": "Pasarela de Cobro Cifrada",
-    "currency": {
-      "label": "Tipo de Cambio",
-      "mxn": "Pesos (MXN)",
-      "usd": "Dólares (USD)"
+    "card2": {
+      "title": "Innovación y resultados",
+      "description": "Creamos software escalable y de alto rendimiento que mejora procesos, optimiza recursos y genera valor tangible para tu empresa."
     },
-    "paymentType": {
-      "label": "Forma de Liquidación",
-      "total": "Cubrir Saldo Completo",
-      "partial": "Pago de Anticipo / Abono"
+    "metric1": {
+      "title": "SEO",
+      "description": "Visibilidad y posicionamiento en buscadores"
     },
-    "folio": {
-      "label": "Código Identificador de Trámite",
-      "placeholder": "Ej. 10293-AX"
-    },
-    "amount": {
-      "label": "Suma Final a Cubrir"
-    },
-    "button": "Añadir a Pedidos",
-    "footer": {
-      "systemsReady": "Equipos en Línea"
-    },
-    "alerts": {
-      "errorTitle": "Fallo detectado",
-      "incompleteProtocol": "Faltan datos. Llena todos los campos requeridos para continuar",
-      "invalidAmount": "La cifra de la operación no es válida"
-    },
-    "cart": {
-      "totalPayment": "Servicio a medida (Liquidación)",
-      "partialPayment": "Servicio a medida (Parcialidad)",
-      "folio": "Ticket",
-      "currency": "Divisa"
+    "metric2": {
+      "title": "Crecimiento",
+      "description": "Infraestructura digital escalable"
     }
   },
-  "servicesPage": {
-    "hero": {
-      "badge": "Listado de Soluciones v4.0",
-      "title": "Nuestro <orange>Catálogo</orange><green>.</green>",
-      "description": "Explora nuestra variedad de servicios técnicos preparados para cualquier reto informático en el sector."
-    },
-    "shared": {
-      "class": "[ RANGO: APRENDIZ ]",
-      "title": "Alojamiento <orange>Multiusuario</orange>",
-      "description": "Perfecto para iniciar tu camino. Ofrecemos un espacio amigable y activos balanceados para que tu portal inicie con la presteza de una nave ligera, con costes ideales para emprendedores.",
-      "button": "Activar Nodo",
-      "imageAlt": "Hosting Compartido"
-    },
-    "vps": {
-      "class": "[ RANGO: CABALLERO ]",
-      "title": "Servidor <green>Virtual (VPS)</green>",
-      "description": "Dominio absoluto sobre tu configuración. Ajusta tu entorno como si forjaras tu propia herramienta de defensa. Disfruta de potencia asignada y el margen de maniobra para misiones de alto tráfico.",
-      "button": "Pedir Acceso",
-      "imageAlt": "VPS Hosting"
-    },
-    "dedicated": {
-      "class": "[ RANGO: COMANDANCIA ]",
-      "title": "Servidor <orange>Físico (Dedicado)</orange>",
-      "description": "La autoridad máxima. Potencial ilimitado para flujos masivos de datos y protección de alto rango. Es disponer de tu propia central de mando para encarar cualquier volumen de operaciones.",
-      "button": "Montar Base",
-      "imageAlt": "Hosting Dedicado"
+  "principles": {
+    "badge": "Principios Fundamentales",
+    "title": "Nos Guiamos Por Tres Principios",
+    "items": [
+      {
+        "title": "Innovación con propósito.",
+        "description": "Aplicamos tecnología moderna para generar resultados concretos."
+      },
+      {
+        "title": "Colaboración cercana.",
+        "description": "Entendemos tu negocio antes de escribir una sola línea de código."
+      },
+      {
+        "title": "Calidad sin compromisos.",
+        "description": "Cada entrega pasa por estrictos estándares de usabilidad, seguridad y rendimiento."
+      }
+    ]
+  },
+  "servicesSection": {
+    "badge": "Catálogo de Servicios",
+    "title": "Nuestros Servicios",
+    "vatIncluded": "IVA incluido en MXN",
+    "addToCart": "Agregar al carrito"
+  },
+  "softwareSolutions": {
+    "badge": "Soluciones de Software",
+    "titleLine1": "Soluciones de software",
+    "titleLine2": "que transforman",
+    "titleLine3": "ideas en resultados",
+    "imageAlt": "Reunión del equipo",
+    "description1": "En Plataforma Tecnológica creemos que el software no solo resuelve problemas: transforma negocios. Somos un equipo de desarrolladores, diseñadores y estrategas apasionados por crear soluciones tecnológicas adaptadas a tus necesidades.",
+    "description2": "Desde nuestros inicios, nos especializamos en diseñar, desarrollar e implementar software personalizado adaptado a los desafíos específicos de cada cliente. Ya sea que necesites una plataforma web, una aplicación móvil, una herramienta interna o una solución de automatización, trabajamos contigo para transformar tus ideas en sistemas funcionales, escalables y listos para crecer.",
+    "principlesTitle": "Nos guiamos por tres principios:",
+    "footerText": "Hoy seguimos creciendo junto a empresas que, como la tuya, ven la tecnología como una herramienta poderosa para evolucionar.",
+    "principles": {
+      "innovation": {
+        "title": "Innovación con propósito",
+        "description": "Aplicamos tecnología moderna para generar resultados concretos."
+      },
+      "collaboration": {
+        "title": "Colaboración cercana",
+        "description": "Entendemos tu negocio antes de escribir una sola línea de código."
+      },
+      "quality": {
+        "title": "Calidad sin compromisos",
+        "description": "Cada entrega pasa por exigentes estándares de usabilidad, seguridad y rendimiento."
+      }
     }
+  },
+  "contactSection": {
+    "badge": "Contacta a Plataforma Tecnológica",
+    "title": "Construyamos tu\nSolución Digital",
+    "sidebar": {
+      "badge": "Comienza tu proyecto",
+      "title": "Comencemos Ahora",
+      "description": "Cuéntanos sobre tu negocio, tu idea o la solución de software que necesitas. Te ayudaremos a construir algo escalable, moderno y preparado para crecer.",
+      "emailLabel": "Correo electrónico",
+      "phoneLabel": "Teléfono",
+      "officeLabel": "Oficina",
+      "officeAddress": "Av. Homero 203, Oficina 804, Piso 8 MZ, Col. Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México"
+    },
+    "form": {
+      "windowTitle": "Formulario de Contacto",
+      "title": "Completa tu información",
+      "description": "Envíanos tus datos y nos pondremos en contacto contigo en breve para hablar sobre tu proyecto.",
+      "name": "Nombre",
+      "company": "Empresa",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "sending": "Enviando...",
+      "send": "Enviar",
+      "success": "Mensaje enviado correctamente."
+    }
+  },
+  "successStories": {
+    "title": "Casos de Éxito",
+    "stories": {
+      "erp": {
+        "title": "Sistema ERP escalable para manufactura",
+        "description": "Procesos de producción e inventarios fragmentados."
+      },
+      "logistics": {
+        "title": "Aplicación móvil para logística en tiempo real",
+        "description": "Sin trazabilidad de entregas ni ubicación en tiempo real."
+      },
+      "ecommerce": {
+        "title": "E-commerce personalizado con IA",
+        "description": "Baja tasa de conversión y alto abandono de carrito."
+      }
+    }
+  },
+  "ourSolutions": {
+    "title": "Nuestras Soluciones",
+    "includes": "Nuestro servicio incluye",
+    "erp": {
+      "title": "Desarrollo de Sistemas ERP (Enterprise Resource Planning)",
+      "description": "Centraliza, automatiza y controla las operaciones de tu empresa con un sistema ERP personalizado. En CreativPlataforma Tecnológica desarrollamos soluciones ERP adaptadas a las necesidades de tu negocio, integrando áreas clave como finanzas, ventas, inventario, recursos humanos, producción y logística en un solo sistema.",
+      "features": [
+        "Análisis de procesos empresariales para adaptar el sistema a tu flujo de trabajo real.",
+        "Desarrollo modular y escalable: el sistema crece contigo.",
+        "Automatización de tareas repetitivas y generación de reportes en tiempo real.",
+        "Integración con herramientas externas como CRM y sistemas contables.",
+        "Seguridad y control de accesos personalizados por departamento o usuario.",
+        "Dashboards y reportes personalizados para una gestión basada en datos."
+      ]
+    }
+  },
+  "workProcess": {
+    "title": "Proceso de Trabajo",
+    "steps": {
+      "analysis": {
+        "title": "Análisis",
+        "description": "Identificamos necesidades y áreas clave."
+      },
+      "design": {
+        "title": "Diseño",
+        "description": "Creamos la arquitectura de la solución."
+      },
+      "development": {
+        "title": "Desarrollo",
+        "description": "Construimos software a medida."
+      },
+      "optimization": {
+        "title": "Optimización",
+        "description": "Mejoramos rendimiento y escalabilidad."
+      }
+    }
+  },
+  "startProject": {
+    "cart": {
+      "quotePrefix": "Cotización de Proyecto",
+      "customPayment": "Pago de Proyecto Personalizado"
+    },
+    "hero": {
+      "title": {
+        "line1": "Personaliza",
+        "line2": "tu servicio"
+      },
+      "description": "No todos nuestros servicios son exactamente lo que necesitas, pero podemos crear una alternativa única para ti."
+    },
+    "panel": {
+      "paymentFlow": "Flujo de Pago",
+      "customProject": "Proyecto Personalizado",
+      "secureCheckout": {
+        "title": "Pago Seguro",
+        "description": "Proceso de pago protegido"
+      },
+      "personalized": {
+        "title": "Personalizado",
+        "description": "Adaptado a tus necesidades"
+      }
+    },
+    "form": {
+      "windowTitle": "Detalles de Pago",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "email": "Correo electrónico",
+      "quoteId": "ID de Cotización",
+      "amount": "Monto a pagar",
+      "success": "Proyecto agregado al carrito correctamente.",
+      "submit": "Continuar al pago",
+      "footer": "El total final está sujeto al 16% de IVA. Los montos mostrados son valores sin impuestos."
+    },
+    "cta": {
+      "label": "Lanza tu próxima experiencia digital",
+      "title": {
+        "line1": "Inicia",
+        "line2": "tu proyecto"
+      },
+      "card": {
+        "title": "¿Tienes una idea en mente?",
+        "description": "Ayudamos a empresas a construir productos de software escalables con tecnologías modernas y experiencias de alto rendimiento.",
+        "button": "Solicitar cotización"
+      }
+    }
+  },
+   "footer": {
+    "subtitle": "Soluciones Digitales",
+    "description": "Soluciones de software innovadoras, seguras y escalables diseñadas para transformar ideas en experiencias digitales poderosas para empresas modernas.",
+    "officeTitle": "Oficina Ciudad de México",
+    "officeAddress": "Av. Homero 203, Oficina 804, Piso 8 MZ, Col. Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México",
+    "securePayments": "Pagos Seguros",
+    "contact": "Contacto",
+    "email": "Correo",
+    "telephone": "Teléfono",
+    "location": "Ubicación",
+    "locationAddress": "Calle Homero No. 203, Oficina 804, Piso 8, MZ, Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México, México",
+    "copyright": "© 2024 Plataforma Tecnológica. Todos los derechos reservados.",
+    "privacy": "Aviso de Privacidad",
+    "refund": "Política de Reembolso",
+    "terms": "Términos y Condiciones"
   },
   "cartDrawer": {
-    "header": {
-      "title": "Inventario de Carga",
-      "session": "ID de Conexión Protegida:"
-    },
-    "empty": {
-      "title": "Bodega sin Artículos",
-      "description": "A la espera de suministros..."
-    },
-    "item": {
-      "serial": "Nº Serie:",
-      "tax": "+ Impuestos"
-    },
-    "footer": {
-      "total": "Balance Final",
-      "taxNote": "Pendiente de tasas locales",
-      "checkout": "Confirmar Operación",
-      "clear": "Cancelar Todo (Vaciar)"
-    },
-    "button": {
-      "openCart": "Ver mi compra"
-    }
+    "activeServices": "Servicios activos",
+    "cart": "Carrito",
+    "emptyTitle": "Tu carrito está vacío",
+    "emptyDescription": "Agrega servicios de software y soluciones personalizadas para comenzar tu proyecto.",
+    "continueBrowsing": "Seguir explorando",
+    "total": "Total",
+    "clearAll": "Vaciar carrito",
+    "subtotal": "Subtotal",
+    "vatMessage": "El IVA (16%) será calculado durante el checkout.",
+    "checkout": "Proceder al pago",
+    "continueShopping": "Continuar comprando"
   }
 }

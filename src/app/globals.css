@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal-dark: #1d3633;
+  --teal-darker: #152624;
+  --coral-red: #e94e5c;
+  --cream: #f5f2eb;
+  --cream-light: #faf8f4;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--teal-dark);
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-teal-dark {
+  background-color: var(--teal-dark);
+}
+
+.bg-teal-darker {
+  background-color: var(--teal-darker);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-cream-light {
+  background-color: var(--cream-light);
+}
+
+.text-coral {
+  color: var(--coral-red);
+}
+
+.bg-coral {
+  background-color: var(--coral-red);
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.grid-pattern-light {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--teal-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--coral-red);
+  border-radius: 4px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover effects */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* Button hover */
+.btn-coral {
+  background-color: var(--coral-red);
+  transition: all 0.3s ease;
+}
+
+.btn-coral:hover {
+  background-color: #d43d4b;
+  transform: translateY(-2px);
+}
+
+/* Principle card */
+.principle-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Process step */
+.process-step {
+  position: relative;
+}
+
+.process-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.15);
+  line-height: 1;
+}
+
+/* Success story row */
+.story-row {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem 0;
+  transition: background 0.3s ease;
+}
+
+.story-row:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* Solution card */
+.solution-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  color: #333;
+  height: 100%;
+}
+
+/* Input styles */
+input, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--coral-red);
+  box-shadow: 0 0 0 3px rgba(233, 78, 92, 0.1);
+}

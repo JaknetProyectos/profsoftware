@@ -4,29 +4,31 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sistemas Avante | Hosting, VPS y Soluciones Web",
-    template: "%s | Sistemas Avante",
+    default: "Plataforma Tecnológica | Desarrollo de Software y Soluciones Digitales",
+    template: "%s | Plataforma Tecnológica",
   },
   description:
-    "Sistemas Avante ofrece servicios de hosting, VPS, dominios, servidores cloud y soluciones web profesionales para empresas y emprendedores. Infraestructura confiable, soporte técnico y alto rendimiento para tus proyectos digitales.",
+    "Plataforma Tecnológica es una empresa especializada en desarrollo de software, aplicaciones web, sistemas empresariales, plataformas digitales y soluciones tecnológicas a medida. Creamos software escalable, seguro y de alto rendimiento para empresas y emprendedores.",
   keywords: [
-    "hosting web",
-    "hosting México",
-    "servidores VPS",
-    "cloud hosting",
-    "registro de dominios",
-    "servidores dedicados",
-    "hosting empresarial",
-    "alojamiento web",
-    "soluciones cloud",
-    "soporte técnico hosting",
-    "hosting cPanel",
-    "infraestructura web",
-    "Sistemas Avante",
+    "desarrollo de software",
+    "software a medida",
+    "desarrollo web",
+    "aplicaciones web",
+    "plataformas digitales",
+    "sistemas empresariales",
+    "soluciones tecnológicas",
+    "desarrollo frontend",
+    "desarrollo backend",
+    "ingeniería de software",
+    "software empresarial",
+    "tecnología",
+    "desarrollo full stack",
+    "automatización de procesos",
+    "Plataforma Tecnológica",
   ],
-  authors: [{ name: "Sistemas Avante" }],
-  creator: "Sistemas Avante",
-  publisher: "Sistemas Avante",
+  authors: [{ name: "Plataforma Tecnológica" }],
+  creator: "Plataforma Tecnológica",
+  publisher: "Plataforma Tecnológica",
   robots: "index, follow",
 };
 
@@ -39,7 +41,7 @@ export default function RootLayout({
     // No definimos lang aquí porque lo hará el layout dinámico
     <html suppressHydrationWarning={true}>
       <head>
-        
+
       </head>
       <body>
         {children}

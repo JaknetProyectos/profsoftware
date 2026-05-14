@@ -71,7 +71,7 @@ export default function SoftwareSolutions() {
 
               <div className="overflow-hidden rounded-2xl">
                 <img
-                  src="https://ext.same-assets.com/2034627938/2116037978.png"
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt={t("imageAlt")}
                   className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />

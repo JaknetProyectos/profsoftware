@@ -58,7 +58,7 @@ export default function SeoSection() {
 
               <div className="p-4">
                 <img
-                  src="https://ext.same-assets.com/2034627938/2116037978.png"
+                  src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt={t("imageAlt")}
                   className="w-full h-auto object-cover rounded-2xl"
                 />

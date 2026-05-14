@@ -6,7 +6,7 @@
       "services": "Servicios",
       "contact": "Contacto"
     },
-    "quote": "Cotizar",
+    "quote": "Presupuesto",
     "languages": {
       "en": "Inglés",
       "es": "Español"
@@ -14,61 +14,61 @@
   },
   "Checkout": {
     "success": {
-      "paymentCompleted": "Pago completado",
-      "orderConfirmed": "¡Pedido confirmado!",
-      "thankYou": "Gracias por tu compra. Te contactaremos en breve para comenzar a trabajar en tu proyecto.",
-      "orderReference": "Referencia del pedido:"
+      "paymentCompleted": "Pago procesado",
+      "orderConfirmed": "¡Pedido recibido!",
+      "thankYou": "Agradecemos tu confianza. Nos comunicaremos contigo a la brevedad para coordinar el inicio de tu proyecto.",
+      "orderReference": "Referencia de seguimiento:"
     },
     "emptyCart": {
-      "badge": "Carrito vacío",
+      "badge": "Sin artículos",
       "title": "Tu carrito está vacío",
-      "description": "Agrega algunos servicios a tu carrito antes de pagar."
+      "description": "Selecciona los servicios que necesites antes de proceder al pago."
     },
     "summary": {
-      "badge": "Pago seguro",
-      "title": "Checkout",
-      "description": "Revisa tu pedido, completa tus datos de facturación y finaliza el pago de forma segura.",
-      "items": "Artículos",
+      "badge": "Transacción protegida",
+      "title": "Finalizar compra",
+      "description": "Revisa los detalles de tu solicitud, ingresa tus datos de facturación y completa el proceso de forma segura.",
+      "items": "Servicios",
       "subtotal": "Subtotal",
-      "total": "Total"
+      "total": "Total estimado"
     },
     "orderSummary": {
-      "title": "Resumen del pedido",
-      "description": "Revisa los servicios agregados a tu carrito.",
-      "lines": "{count, plural, one {# línea} other {# líneas}}",
-      "lineTotal": "Total de la línea"
+      "title": "Resumen de servicios",
+      "description": "Detalle de los conceptos agregados al carrito.",
+      "lines": "{count, plural, one {# concepto} other {# conceptos}}",
+      "lineTotal": "Total por concepto"
     },
     "payment": {
-      "title": "Información de pago",
-      "description": "Completa los datos para finalizar tu compra."
+      "title": "Método de pago",
+      "description": "Ingresa la información necesaria para procesar tu solicitud."
     },
     "sections": {
-      "contact": "Información de contacto",
-      "billingAddress": "Dirección de facturación",
-      "cardInformation": "Información de la tarjeta"
+      "contact": "Datos de contacto",
+      "billingAddress": "Domicilio fiscal",
+      "cardInformation": "Detalles del pago"
     },
     "form": {
       "firstName": "Nombre",
       "lastName": "Apellido",
       "email": "Correo electrónico",
-      "phone": "Teléfono",
-      "company": "Empresa (Opcional)",
-      "address": "Dirección",
-      "city": "Ciudad",
-      "state": "Estado",
+      "phone": "Teléfono de contacto",
+      "company": "Razón social (Opcional)",
+      "address": "Calle y número",
+      "city": "Ciudad / Localidad",
+      "state": "Estado / Provincia",
       "postalCode": "Código postal",
       "country": "País",
-      "nameOnCard": "Nombre en la tarjeta",
+      "nameOnCard": "Titular de la tarjeta",
       "cardNumber": "Número de tarjeta",
-      "expiryMonth": "MM",
-      "expiryYear": "YYYY",
-      "cvv": "CVV",
+      "expiryMonth": "Mes",
+      "expiryYear": "Año",
+      "cvv": "Código de seguridad",
       "defaultCountryEs": "México",
       "defaultCountryEn": "Mexico"
     },
     "paymentReference": {
-      "label": "Referencia de pago",
-      "generated": "Se genera al finalizar la compra"
+      "label": "Folio de pago",
+      "generated": "Se asignará al confirmar la operación"
     },
     "paymentMethods": {
       "visa": "Visa",
@@ -76,360 +76,360 @@
       "octano": "Octano"
     },
     "actions": {
-      "returnHome": "Volver al inicio",
-      "browseServices": "Ver servicios",
-      "processing": "Procesando...",
-      "completePurchase": "Completar compra - MXN$"
+      "returnHome": "Volver a inicio",
+      "browseServices": "Explorar servicios",
+      "processing": "Validando información...",
+      "completePurchase": "Confirmar pago - MXN$"
     },
     "totals": {
       "subtotal": "Subtotal",
       "vat": "IVA (16%)",
-      "total": "Total"
+      "total": "Total final"
     },
     "terms": {
-      "notice": "Al completar esta compra, aceptas nuestros Términos y condiciones y nuestra Política de privacidad."
+      "notice": "Al continuar, confirmas estar de acuerdo con nuestros Términos de Servicio y el Aviso de Privacidad."
     },
     "accessibility": {
-      "removeItem": "Eliminar artículo",
-      "decreaseQuantity": "Disminuir cantidad",
-      "increaseQuantity": "Aumentar cantidad"
+      "removeItem": "Quitar del carrito",
+      "decreaseQuantity": "Reducir cantidad",
+      "increaseQuantity": "Sumar cantidad"
     },
     "errors": {
-      "paymentFailed": "No se pudo completar el pago",
-      "unknown": "Error desconocido"
+      "paymentFailed": "No se pudo procesar la transacción",
+      "unknown": "Ocurrió un inconveniente inesperado"
     }
   },
   "CustomProject": {
     "hero": {
-      "badge": "Desarrollo Personalizado Premium",
-      "title": "Crea tu",
-      "titleHighlight": "próximo software",
-      "titleEnd": " proyecto",
-      "description": "Plataformas empresariales, automatizaciones con IA, aplicaciones móviles y sistemas escalables diseñados específicamente para los objetivos de tu negocio."
+      "badge": "Desarrollo a la Medida",
+      "title": "Impulsa tu",
+      "titleHighlight": "entorno digital",
+      "titleEnd": " con expertos",
+      "description": "Desarrollamos herramientas corporativas, integraciones técnicas y sistemas diseñados para alinearse con la operativa de tu organización."
     },
     "solutions": {
-      "badge": "Soluciones a Medida",
-      "title": "¿Qué podemos",
-      "titleHighlight": "construir para ti?",
-      "description": "Cada proyecto personalizado está diseñado para rendimiento, escalabilidad y experiencias modernas de usuario."
+      "badge": "Consultoría Técnica",
+      "title": "Hacemos realidad",
+      "titleHighlight": "tus requerimientos",
+      "description": "Proyectamos soluciones enfocadas en la eficiencia operativa y una experiencia de usuario equilibrada."
     },
     "cards": {
       "web": {
-        "title": "Plataformas Web",
-        "description": "SaaS personalizados, dashboards, sistemas administrativos y arquitectura cloud escalable."
+        "title": "Sistemas Web",
+        "description": "SaaS, paneles de control y estructuras en la nube preparadas para el crecimiento."
       },
       "mobile": {
-        "title": "Aplicaciones Móviles",
-        "description": "Experiencias iOS y Android de alto rendimiento con interfaces elegantes."
+        "title": "Soluciones Móviles",
+        "description": "Aplicaciones para iOS y Android con interfaces funcionales y navegación fluida."
       },
       "ai": {
-        "title": "Integraciones IA",
-        "description": "Agentes IA, automatizaciones, chatbots y flujos de trabajo inteligentes."
+        "title": "Asistencia con IA",
+        "description": "Implementación de flujos inteligentes y automatización de procesos mediante modelos de IA."
       }
     },
     "form": {
-      "badge": "Cotización Personalizada",
-      "title": "Detalles del Proyecto",
+      "badge": "Solicitud de Cotización",
+      "title": "Alcance del Proyecto",
       "firstName": "Nombre",
       "lastName": "Apellidos",
-      "email": "Correo Electrónico",
-      "service": "Servicio Requerido",
-      "projectDetails": "Detalles del Proyecto",
-      "quoteId": "ID de Cotización",
-      "amount": "Monto a Pagar",
-      "submit": "Agregar Proyecto Personalizado",
-      "selectService": "Selecciona un servicio",
+      "email": "Correo corporativo",
+      "service": "Tipo de solución",
+      "projectDetails": "Descripción técnica",
+      "quoteId": "ID de referencia",
+      "amount": "Presupuesto estimado",
+      "submit": "Añadir requerimiento",
+      "selectService": "Elige una categoría",
       "placeholders": {
-        "firstName": "Juan",
-        "lastName": "Pérez",
-        "email": "juan@empresa.com",
-        "details": "Cuéntanos sobre tu idea, objetivos, funcionalidades y necesidades del negocio...",
-        "quoteId": "Opcional",
-        "amount": "$5,000"
+        "firstName": "Ej. Alberto",
+        "lastName": "García",
+        "email": "contacto@tuempresa.com",
+        "details": "Describe brevemente tus objetivos y las funcionalidades clave que necesitas...",
+        "quoteId": "Si ya tienes uno",
+        "amount": "Monto base sugerido"
       }
     },
     "services": {
-      "webPlatform": "Plataforma Web",
-      "mobileApp": "Aplicación Móvil",
-      "aiAutomation": "Automatización IA",
-      "ecommerce": "E-commerce",
-      "customSoftware": "Software Personalizado"
+      "webPlatform": "Desarrollo Web",
+      "mobileApp": "App Móvil",
+      "aiAutomation": "Flujos con IA",
+      "ecommerce": "Comercio Electrónico",
+      "customSoftware": "Software Especializado"
     },
-    "success": "Tu proyecto personalizado fue agregado al carrito correctamente.",
-    "footer": "Experiencia segura de checkout personalizado con infraestructura escalable y procesamiento moderno de pagos.",
+    "success": "Los detalles de tu proyecto se han registrado en el carrito.",
+    "footer": "Proceso de pago gestionado bajo estándares de seguridad y transparencia.",
     "cart": {
-      "customProjectName": "Proyecto Personalizado de {service}",
-      "defaultProjectName": "Proyecto de Software Personalizado"
+      "customProjectName": "Servicio de {service}",
+      "defaultProjectName": "Desarrollo de Software Especializado"
     }
   },
   "Hero": {
-    "badge": "Desarrollo de Software Moderno",
-    "windowTitle": "dashboard.tsx",
+    "badge": "Tecnología para Negocios",
+    "windowTitle": "index.tsx",
     "title": {
-      "start": "Construye tu",
-      "highlight": "presencia digital",
-      "end": "con software escalable"
+      "start": "Optimiza tu",
+      "highlight": "alcance tecnológico",
+      "end": "con soluciones robustas"
     },
-    "description": "Aplicaciones empresariales, integraciones con IA y experiencias web modernas diseñadas para crecimiento, rendimiento y experiencias premium para tus usuarios.",
+    "description": "Acompañamos a las empresas en su transición digital mediante herramientas funcionales y arquitecturas orientadas a resultados sostenibles.",
     "analytics": {
-      "file": "analytics.json",
-      "trafficLabel": "Tráfico Mensual"
+      "file": "metricas.json",
+      "trafficLabel": "Actividad Mensual"
     },
     "chart": {
       "start": "Ene",
       "end": "Dic"
     },
     "visitors": {
-      "title": "Visitantes",
-      "organic": "Orgánico",
-      "social": "Social"
+      "title": "Tráfico",
+      "organic": "Búsquedas",
+      "social": "Redes"
     }
   },
   "AboutUs": {
-    "badge": "Sobre Nuestra Empresa",
-    "title": "Construimos productos digitales escalables con tecnología moderna.",
-    "description": "Creamos experiencias de software de alto rendimiento enfocadas en escalabilidad, diseño y crecimiento empresarial para compañías modernas.",
-    "windowTitle": "Resumen de la Empresa",
+    "badge": "Nuestra Identidad",
+    "title": "Transformamos ideas en herramientas digitales sólidas.",
+    "description": "Nos enfocamos en el desarrollo de software confiable, priorizando la estabilidad y el cumplimiento de los objetivos de nuestros socios comerciales.",
+    "windowTitle": "Perfil Corporativo",
     "cards": {
       "innovation": {
-        "title": "Innovación Primero",
-        "description": "Nuestra visión es convertirnos en el socio tecnológico de confianza para empresas de todas las industrias, desarrollando software innovador que ayude a las marcas a desbloquear su potencial digital."
+        "title": "Mejora Continua",
+        "description": "Buscamos ser el apoyo técnico de empresas que desean integrar nuevas tecnologías para optimizar su presencia en el mercado."
       },
       "growth": {
-        "title": "Enfoque en Crecimiento",
-        "description": "Medimos nuestro éxito a través del éxito de nuestros clientes, apoyándolos en cada etapa con sistemas escalables, automatización y experiencias digitales modernas."
+        "title": "Visión de Futuro",
+        "description": "Colaboramos estrechamente con nuestros clientes, proporcionando sistemas que se adaptan a la evolución natural de sus operaciones."
       }
     }
   },
   "seo": {
-    "badge": "SEO y Crecimiento Digital",
-    "title1": "SEO enfocado",
-    "title2": "en tu éxito",
-    "windowLabel": "Estrategia de Crecimiento",
-    "imageAlt": "Reunión de equipo",
-    "description1": "En Plataforma Tecnológica creemos que el software no solo resuelve problemas: transforma negocios. Somos un equipo de desarrolladores, diseñadores y estrategas apasionados por crear soluciones tecnológicas adaptadas a tus necesidades.",
-    "description2": "Desde nuestros inicios nos hemos especializado en diseñar, desarrollar e implementar software personalizado adaptado a los desafíos específicos de cada cliente. Ya sea que necesites una plataforma web, una app móvil, una herramienta interna o una solución de automatización, trabajamos contigo para transformar tus ideas en sistemas funcionales, escalables y preparados para crecer.",
+    "badge": "Estrategia Digital",
+    "title1": "Visibilidad técnica",
+    "title2": "para tu marca",
+    "windowLabel": "Plan de Crecimiento",
+    "imageAlt": "Sesión de planeación",
+    "description1": "En Plataforma Tecnológica entendemos que el software es un facilitador de procesos. Somos un equipo dedicado a estructurar soluciones que responden a retos específicos.",
+    "description2": "Trabajamos en el diseño e implementación de herramientas que ayudan a gestionar mejor el día a día empresarial. Desde automatizaciones hasta plataformas complejas, nuestro enfoque es entregar sistemas que funcionen según lo planeado.",
     "card1": {
-      "title": "Somos especialistas en software",
-      "description": "Un equipo apasionado y comprometido creando soluciones digitales que resuelven problemas reales e impulsan negocios."
+      "title": "Especialistas en desarrollo",
+      "description": "Contamos con la experiencia necesaria para abordar problemas operativos mediante código y diseño funcional."
     },
     "card2": {
-      "title": "Innovación y resultados",
-      "description": "Creamos software escalable y de alto rendimiento que mejora procesos, optimiza recursos y genera valor tangible para tu empresa."
+      "title": "Compromiso con la entrega",
+      "description": "Desarrollamos soluciones orientadas a mejorar la gestión de recursos y la claridad en la toma de decisiones."
     },
     "metric1": {
-      "title": "SEO",
-      "description": "Visibilidad y posicionamiento en buscadores"
+      "title": "Presencia",
+      "description": "Optimización para motores de búsqueda"
     },
     "metric2": {
-      "title": "Crecimiento",
-      "description": "Infraestructura digital escalable"
+      "title": "Escalabilidad",
+      "description": "Estructuras preparadas para crecer"
     }
   },
   "principles": {
-    "badge": "Principios Fundamentales",
-    "title": "Nos Guiamos Por Tres Principios",
+    "badge": "Valores Operativos",
+    "title": "Nuestros Tres Pilares",
     "items": [
       {
-        "title": "Innovación con propósito.",
-        "description": "Aplicamos tecnología moderna para generar resultados concretos."
+        "title": "Tecnología con sentido.",
+        "description": "Cada implementación busca resolver una necesidad real del negocio."
       },
       {
-        "title": "Colaboración cercana.",
-        "description": "Entendemos tu negocio antes de escribir una sola línea de código."
+        "title": "Comunicación constante.",
+        "description": "Establecemos un canal abierto para alinear expectativas desde el primer día."
       },
       {
-        "title": "Calidad sin compromisos.",
-        "description": "Cada entrega pasa por estrictos estándares de usabilidad, seguridad y rendimiento."
+        "title": "Atención al detalle.",
+        "description": "Buscamos estándares de seguridad y usabilidad acordes a la industria."
       }
     ]
   },
   "servicesSection": {
-    "badge": "Catálogo de Servicios",
-    "title": "Nuestros Servicios",
-    "vatIncluded": "IVA incluido en MXN",
-    "addToCart": "Agregar al carrito"
+    "badge": "Opciones de Servicio",
+    "title": "Nuestras Soluciones",
+    "vatIncluded": "Precios incluyen IVA (MXN)",
+    "addToCart": "Añadir al pedido"
   },
   "softwareSolutions": {
-    "badge": "Soluciones de Software",
-    "titleLine1": "Soluciones de software",
-    "titleLine2": "que transforman",
-    "titleLine3": "ideas en resultados",
-    "imageAlt": "Reunión del equipo",
-    "description1": "En Plataforma Tecnológica creemos que el software no solo resuelve problemas: transforma negocios. Somos un equipo de desarrolladores, diseñadores y estrategas apasionados por crear soluciones tecnológicas adaptadas a tus necesidades.",
-    "description2": "Desde nuestros inicios, nos especializamos en diseñar, desarrollar e implementar software personalizado adaptado a los desafíos específicos de cada cliente. Ya sea que necesites una plataforma web, una aplicación móvil, una herramienta interna o una solución de automatización, trabajamos contigo para transformar tus ideas en sistemas funcionales, escalables y listos para crecer.",
-    "principlesTitle": "Nos guiamos por tres principios:",
-    "footerText": "Hoy seguimos creciendo junto a empresas que, como la tuya, ven la tecnología como una herramienta poderosa para evolucionar.",
+    "badge": "Capacidades Técnicas",
+    "titleLine1": "Sistemas diseñados",
+    "titleLine2": "para acompañar",
+    "titleLine3": "tus metas",
+    "imageAlt": "Colaboradores trabajando",
+    "description1": "Creemos que la tecnología es un aliado estratégico. Nuestro objetivo es simplificar la complejidad técnica para que puedas concentrarte en lo esencial de tu negocio.",
+    "description2": "Nos especializamos en construir software que se ajusta a la medida de los retos actuales. Analizamos cada caso para proponer arquitecturas web o móviles que sean útiles y duraderas.",
+    "principlesTitle": "Nuestra metodología de trabajo:",
+    "footerText": "Estamos listos para colaborar con organizaciones que ven en la tecnología un medio para evolucionar su modelo de servicio.",
     "principles": {
       "innovation": {
-        "title": "Innovación con propósito",
-        "description": "Aplicamos tecnología moderna para generar resultados concretos."
+        "title": "Sentido práctico",
+        "description": "Usamos herramientas modernas para obtener resultados aprovechables."
       },
       "collaboration": {
-        "title": "Colaboración cercana",
-        "description": "Entendemos tu negocio antes de escribir una sola línea de código."
+        "title": "Acompañamiento",
+        "description": "Escuchamos tus necesidades antes de proponer cualquier desarrollo técnico."
       },
       "quality": {
-        "title": "Calidad sin compromisos",
-        "description": "Cada entrega pasa por exigentes estándares de usabilidad, seguridad y rendimiento."
+        "title": "Rigurosidad",
+        "description": "Realizamos pruebas para asegurar que el sistema sea estable y seguro."
       }
     }
   },
   "contactSection": {
-    "badge": "Contacta a Plataforma Tecnológica",
-    "title": "Construyamos tu\nSolución Digital",
+    "badge": "Hablemos de tu proyecto",
+    "title": "Diseñemos tu\nEcosistema Digital",
     "sidebar": {
-      "badge": "Comienza tu proyecto",
-      "title": "Comencemos Ahora",
-      "description": "Cuéntanos sobre tu negocio, tu idea o la solución de software que necesitas. Te ayudaremos a construir algo escalable, moderno y preparado para crecer.",
+      "badge": "Primer contacto",
+      "title": "Iniciemos la charla",
+      "description": "Comparte con nosotros tus inquietudes técnicas. Evaluaremos juntos la mejor ruta para desarrollar una solución acorde a tus tiempos y presupuesto.",
       "emailLabel": "Correo electrónico",
-      "phoneLabel": "Teléfono",
-      "officeLabel": "Oficina",
-      "officeAddress": "Av. Homero 203, Oficina 804, Piso 8 MZ, Col. Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México"
+      "phoneLabel": "Línea directa",
+      "officeLabel": "Ubicación",
+      "officeAddress": "Av. Homero 203, Of. 804, Polanco V Sección, Miguel Hidalgo, CP 11560, Ciudad de México"
     },
     "form": {
-      "windowTitle": "Formulario de Contacto",
-      "title": "Completa tu información",
-      "description": "Envíanos tus datos y nos pondremos en contacto contigo en breve para hablar sobre tu proyecto.",
+      "windowTitle": "Mensajería",
+      "title": "Información básica",
+      "description": "Déjanos tus datos de contacto y un breve resumen de lo que necesitas para que un especialista te contacte.",
       "name": "Nombre",
-      "company": "Empresa",
+      "company": "Organización",
       "phone": "Teléfono",
       "email": "Correo electrónico",
-      "message": "Mensaje",
+      "message": "Comentarios adicionales",
       "sending": "Enviando...",
-      "send": "Enviar",
-      "success": "Mensaje enviado correctamente."
+      "send": "Enviar mensaje",
+      "success": "Información enviada. Nos pondremos en contacto pronto."
     }
   },
   "successStories": {
-    "title": "Casos de Éxito",
+    "title": "Experiencias de Usuario",
     "stories": {
       "erp": {
-        "title": "Sistema ERP escalable para manufactura",
-        "description": "Procesos de producción e inventarios fragmentados."
+        "title": "Integración ERP para sector industrial",
+        "description": "Estandarización de flujos de inventario y producción."
       },
       "logistics": {
-        "title": "Aplicación móvil para logística en tiempo real",
-        "description": "Sin trazabilidad de entregas ni ubicación en tiempo real."
+        "title": "Seguimiento logístico en tiempo real",
+        "description": "Mejora en la visibilidad de entregas y coordinación de rutas."
       },
       "ecommerce": {
-        "title": "E-commerce personalizado con IA",
-        "description": "Baja tasa de conversión y alto abandono de carrito."
+        "title": "Plataforma de ventas con motor de recomendación",
+        "description": "Optimización del flujo de compra y gestión de catálogo."
       }
     }
   },
   "ourSolutions": {
-    "title": "Nuestras Soluciones",
-    "includes": "Nuestro servicio incluye",
+    "title": "Alcance de Soluciones",
+    "includes": "El servicio contempla",
     "erp": {
-      "title": "Desarrollo de Sistemas ERP (Enterprise Resource Planning)",
-      "description": "Centraliza, automatiza y controla las operaciones de tu empresa con un sistema ERP personalizado. En CreativPlataforma Tecnológica desarrollamos soluciones ERP adaptadas a las necesidades de tu negocio, integrando áreas clave como finanzas, ventas, inventario, recursos humanos, producción y logística en un solo sistema.",
+      "title": "Planificación de Recursos Empresariales (ERP)",
+      "description": "Busca centralizar la información de tu empresa en una sola herramienta. Desarrollamos módulos que facilitan la gestión de áreas como finanzas, ventas y logística, adaptándonos a la escala de tu operación.",
       "features": [
-        "Análisis de procesos empresariales para adaptar el sistema a tu flujo de trabajo real.",
-        "Desarrollo modular y escalable: el sistema crece contigo.",
-        "Automatización de tareas repetitivas y generación de reportes en tiempo real.",
-        "Integración con herramientas externas como CRM y sistemas contables.",
-        "Seguridad y control de accesos personalizados por departamento o usuario.",
-        "Dashboards y reportes personalizados para una gestión basada en datos."
+        "Revisión de procesos actuales para alinear el software con la realidad del negocio.",
+        "Arquitectura modular que permite añadir funciones en el futuro.",
+        "Reducción de tareas manuales mediante flujos de datos automatizados.",
+        "Posibilidad de conexión con servicios de terceros y sistemas contables previos.",
+        "Gestión de permisos para resguardar la información por niveles de acceso.",
+        "Visualización de indicadores clave para facilitar la administración."
       ]
     }
   },
   "workProcess": {
-    "title": "Proceso de Trabajo",
+    "title": "Fases del Proyecto",
     "steps": {
       "analysis": {
-        "title": "Análisis",
-        "description": "Identificamos necesidades y áreas clave."
+        "title": "Diagnóstico",
+        "description": "Entendemos los requerimientos y el entorno."
       },
       "design": {
-        "title": "Diseño",
-        "description": "Creamos la arquitectura de la solución."
+        "title": "Arquitectura",
+        "description": "Modelamos la estructura y la experiencia."
       },
       "development": {
-        "title": "Desarrollo",
-        "description": "Construimos software a medida."
+        "title": "Construcción",
+        "description": "Codificamos la solución bajo estándares de calidad."
       },
       "optimization": {
-        "title": "Optimización",
-        "description": "Mejoramos rendimiento y escalabilidad."
+        "title": "Ajustes",
+        "description": "Refinamos detalles para asegurar la estabilidad."
       }
     }
   },
   "startProject": {
     "cart": {
-      "quotePrefix": "Cotización de Proyecto",
-      "customPayment": "Pago de Proyecto Personalizado"
+      "quotePrefix": "Referencia de Proyecto",
+      "customPayment": "Anticipo de Desarrollo"
     },
     "hero": {
       "title": {
-        "line1": "Personaliza",
-        "line2": "tu servicio"
+        "line1": "Define",
+        "line2": "tu requerimiento"
       },
-      "description": "No todos nuestros servicios son exactamente lo que necesitas, pero podemos crear una alternativa única para ti."
+      "description": "Si los paquetes estándar no se ajustan a ti, podemos estructurar una propuesta técnica específica."
     },
     "panel": {
-      "paymentFlow": "Flujo de Pago",
-      "customProject": "Proyecto Personalizado",
+      "paymentFlow": "Gestión de Pago",
+      "customProject": "Requerimiento Especial",
       "secureCheckout": {
-        "title": "Pago Seguro",
-        "description": "Proceso de pago protegido"
+        "title": "Pago Confiable",
+        "description": "Protocolos de seguridad activos"
       },
       "personalized": {
-        "title": "Personalizado",
-        "description": "Adaptado a tus necesidades"
+        "title": "A Medida",
+        "description": "Acorde a tus objetivos"
       }
     },
     "form": {
-      "windowTitle": "Detalles de Pago",
+      "windowTitle": "Validación de Pago",
       "firstName": "Nombre",
       "lastName": "Apellidos",
       "email": "Correo electrónico",
-      "quoteId": "ID de Cotización",
-      "amount": "Monto a pagar",
-      "success": "Proyecto agregado al carrito correctamente.",
-      "submit": "Continuar al pago",
-      "footer": "El total final está sujeto al 16% de IVA. Los montos mostrados son valores sin impuestos."
+      "quoteId": "ID de Presupuesto",
+      "amount": "Cantidad a procesar",
+      "success": "Se ha añadido el concepto al carrito correctamente.",
+      "submit": "Ir a confirmación",
+      "footer": "Las cifras mostradas son base. El cálculo final incluirá el 16% de IVA conforme a la ley."
     },
     "cta": {
-      "label": "Lanza tu próxima experiencia digital",
+      "label": "Comienza tu transición tecnológica",
       "title": {
-        "line1": "Inicia",
-        "line2": "tu proyecto"
+        "line1": "Planifica",
+        "line2": "tu software"
       },
       "card": {
-        "title": "¿Tienes una idea en mente?",
-        "description": "Ayudamos a empresas a construir productos de software escalables con tecnologías modernas y experiencias de alto rendimiento.",
-        "button": "Solicitar cotización"
+        "title": "¿Tienes un proyecto en mente?",
+        "description": "Apoyamos a las organizaciones en el desarrollo de productos digitales funcionales con un enfoque en la durabilidad técnica.",
+        "button": "Pedir información"
       }
     }
   },
    "footer": {
-    "subtitle": "Soluciones Digitales",
-    "description": "Soluciones de software innovadoras, seguras y escalables diseñadas para transformar ideas en experiencias digitales poderosas para empresas modernas.",
-    "officeTitle": "Oficina Ciudad de México",
-    "officeAddress": "Av. Homero 203, Oficina 804, Piso 8 MZ, Col. Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México",
-    "securePayments": "Pagos Seguros",
+    "subtitle": "Servicios Tecnológicos",
+    "description": "Desarrollo de software enfocado en la funcionalidad y la seguridad, diseñado para aportar valor a la operación de empresas contemporáneas.",
+    "officeTitle": "Sede Ciudad de México",
+    "officeAddress": "Av. Homero 203, Of. 804, Polanco V Sección, Miguel Hidalgo, CP 11560, Ciudad de México",
+    "securePayments": "Pagos Protegidos",
     "contact": "Contacto",
-    "email": "Correo",
+    "email": "E-mail",
     "telephone": "Teléfono",
     "location": "Ubicación",
-    "locationAddress": "Calle Homero No. 203, Oficina 804, Piso 8, MZ, Polanco V Sección, Alcaldía Miguel Hidalgo, CP 11560, Ciudad de México, México",
-    "copyright": "© 2024 Plataforma Tecnológica. Todos los derechos reservados.",
-    "privacy": "Aviso de Privacidad",
-    "refund": "Política de Reembolso",
-    "terms": "Términos y Condiciones"
+    "locationAddress": "Calle Homero No. 203, Oficina 804, Piso 8, Polanco V Sección, Miguel Hidalgo, CP 11560, CDMX, México",
+    "copyright": "© 2024 Plataforma Tecnológica. Contenidos protegidos.",
+    "privacy": "Privacidad",
+    "refund": "Reembolsos",
+    "terms": "Condiciones"
   },
   "cartDrawer": {
-    "activeServices": "Servicios activos",
+    "activeServices": "Selección actual",
     "cart": "Carrito",
-    "emptyTitle": "Tu carrito está vacío",
-    "emptyDescription": "Agrega servicios de software y soluciones personalizadas para comenzar tu proyecto.",
-    "continueBrowsing": "Seguir explorando",
-    "total": "Total",
-    "clearAll": "Vaciar carrito",
-    "subtotal": "Subtotal",
-    "vatMessage": "El IVA (16%) será calculado durante el checkout.",
-    "checkout": "Proceder al pago",
-    "continueShopping": "Continuar comprando"
+    "emptyTitle": "No hay servicios seleccionados",
+    "emptyDescription": "Explora nuestras soluciones para comenzar a estructurar tu proyecto.",
+    "continueBrowsing": "Ver opciones",
+    "total": "Total estimado",
+    "clearAll": "Limpiar carrito",
+    "subtotal": "Monto base",
+    "vatMessage": "Los impuestos correspondientes se desglosarán en el paso final.",
+    "checkout": "Confirmar servicios",
+    "continueShopping": "Añadir más"
   }
 }

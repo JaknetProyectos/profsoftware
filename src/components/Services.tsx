@@ -3,46 +3,33 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
 import { servicesEnglish, servicesSpanish } from "@/lib/services";
+import { LucideIcon } from "lucide-react";
+
+type Service = {
+  id: string;
+  name: string;
+  price: string;
+  priceNumber: number;
+  icon: LucideIcon;
+};
 
 export default function Services() {
   const t = useTranslations("servicesSection");
-  const locale = useLocale()
-  const services = locale == "es" ? servicesSpanish : servicesEnglish;
+  const locale = useLocale();
+
+  const services: Service[] =
+    locale == "es" ? servicesSpanish : servicesEnglish;
 
   const { addItem } = useCart();
 
-  const handleAddToCart = (service: typeof services[0]) => {
+  const handleAddToCart = (service: Service) => {
     addItem({
       id: service.id,
       name: service.name,
       price: service.price,
       priceNumber: service.priceNumber,
-      icon: service.icon,
+      icon: service.icon.name,
     });
-  };
-
-  const getIcon = (type: string) => {
-    const iconClass =
-      "w-12 h-12 text-[#1f1f25] transition-transform duration-300 group-hover:scale-110";
-
-    switch (type) {
-      default:
-        return (
-          <svg
-            className={iconClass}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
-        );
-    }
   };
 
   return (
@@ -86,6 +73,8 @@ export default function Services() {
 
             const accent = accents[index % accents.length];
 
+            const Icon = service.icon;
+
             return (
               <div
                 key={service.id}
@@ -108,7 +97,7 @@ export default function Services() {
                   className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${accent} p-[1px] mb-6 shadow-[0_0_40px_rgba(168,85,247,0.15)]`}
                 >
                   <div className="w-full h-full rounded-3xl bg-[#f5f5f7] flex items-center justify-center">
-                    {getIcon(service.icon)}
+                    <Icon className="w-12 h-12 text-[#1f1f25] transition-transform duration-300 group-hover:scale-110" />
                   </div>
                 </div>
 

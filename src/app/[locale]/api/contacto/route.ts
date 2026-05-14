@@ -7,6 +7,87 @@ const resend = new Resend(
   process.env.RESEND_API_KEY
 );
 
+function escapeHtml(value: unknown) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatLabel(key: string) {
+  const labels: Record<string, string> = {
+    nombre: "Nombre",
+    email: "Correo electrónico",
+    mensaje: "Mensaje",
+    telefono: "Teléfono",
+    empresa: "Empresa",
+    asunto: "Asunto",
+    pais: "País",
+    country: "País",
+    ciudad: "Ciudad",
+    city: "Ciudad",
+    estado: "Estado",
+    state: "Estado",
+    direccion: "Dirección",
+    address: "Dirección",
+    cp: "Código postal",
+    zip: "Código postal",
+    website: "Sitio web",
+  };
+
+  return (
+    labels[key] ||
+    key
+      .replace(/[_-]/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+  );
+}
+
+function buildFieldsHtml(body: Record<string, unknown>) {
+  const entries = Object.entries(body).filter(
+    ([, value]) =>
+      value !== undefined &&
+      value !== null &&
+      String(value).trim() !== ""
+  );
+
+  if (!entries.length) {
+    return `
+      <p style="margin:0;color:#A1A1AA;">
+        No hay datos adicionales para mostrar.
+      </p>
+    `;
+  }
+
+  return entries
+    .map(
+      ([key, value]) => `
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          gap:16px;
+          padding:12px 0;
+          border-bottom:1px solid #27272A;
+        ">
+          <span style="color:#C084FC;font-size:13px;min-width:120px;">
+            ${escapeHtml(formatLabel(key))}
+          </span>
+          <span style="
+            color:#E4E4E7;
+            font-size:13px;
+            text-align:right;
+            word-break:break-word;
+          ">
+            ${escapeHtml(value)}
+          </span>
+        </div>
+      `
+    )
+    .join("");
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -63,7 +144,7 @@ export async function POST(req: Request) {
                 letter-spacing:3px;
                 font-size:12px;
               ">
-                Plataforma Tecnológica ALERT
+                ALERTA DE PLATAFORMA TECNOLÓGICA
               </p>
 
               <h1 style="
@@ -95,25 +176,29 @@ export async function POST(req: Request) {
                   margin:0;
                   color:white;
                 ">
-                  ${nombre}
+                  ${escapeHtml(nombre)}
                 </h2>
               </div>
 
-              <p style="color:#A1A1AA;">
-                <strong style="color:white;">Email:</strong>
-                ${email}
-              </p>
+              <div style="
+                background:#18181B;
+                border:1px solid #27272A;
+                border-radius:16px;
+                padding:20px;
+                margin-bottom:24px;
+              ">
+                <div style="
+                  font-size:12px;
+                  letter-spacing:2px;
+                  text-transform:uppercase;
+                  color:#C084FC;
+                  margin-bottom:16px;
+                ">
+                  Detalles del contacto
+                </div>
 
-              ${
-                telefono
-                  ? `
-                <p style="color:#A1A1AA;">
-                  <strong style="color:white;">Teléfono:</strong>
-                  ${telefono}
-                </p>
-              `
-                  : ""
-              }
+                ${buildFieldsHtml(body)}
+              </div>
 
               <div style="
                 margin-top:24px;
@@ -126,8 +211,9 @@ export async function POST(req: Request) {
                   color:#E4E4E7;
                   line-height:28px;
                   margin:0;
+                  white-space:pre-wrap;
                 ">
-                  ${mensaje}
+                  ${escapeHtml(mensaje)}
                 </p>
               </div>
             </div>
@@ -143,7 +229,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Plataforma Tecnológica <gestion@plataformatecnologica.com>",
       to: email,
-      subject: "We received your message",
+      subject: "Hemos recibido tu mensaje",
 
       html: `
         <div style="
@@ -172,7 +258,7 @@ export async function POST(req: Request) {
                 letter-spacing:3px;
                 font-size:12px;
               ">
-                Plataforma Tecnológica SYSTEM
+                SISTEMA DE PLATAFORMA TECNOLÓGICA
               </p>
 
               <h1 style="
@@ -180,7 +266,7 @@ export async function POST(req: Request) {
                 font-size:36px;
                 color:white;
               ">
-                Contact Confirmed
+                Contacto confirmado
               </h1>
             </div>
 
@@ -189,7 +275,7 @@ export async function POST(req: Request) {
                 color:#E5E7EB;
                 font-size:18px;
               ">
-                Hi ${nombre},
+                Hola ${escapeHtml(nombre)},
               </p>
 
               <p style="
@@ -197,9 +283,56 @@ export async function POST(req: Request) {
                 line-height:28px;
                 font-size:16px;
               ">
-                We received your message successfully.
-                Our team is reviewing your request and
-                will contact you shortly.
+                Hemos recibido tu mensaje correctamente.
+                Estos son los datos que nos compartiste:
+              </p>
+
+              <div style="
+                margin-top:24px;
+                background:#18181B;
+                border:1px solid #27272A;
+                border-radius:16px;
+                padding:20px;
+              ">
+                ${buildFieldsHtml(body)}
+              </div>
+
+              <div style="
+                margin-top:24px;
+                background:#18181B;
+                border:1px solid #27272A;
+                border-radius:16px;
+                padding:20px;
+              ">
+                <p style="
+                  margin:0 0 10px;
+                  color:#C084FC;
+                  font-size:12px;
+                  letter-spacing:2px;
+                  text-transform:uppercase;
+                ">
+                  Mensaje
+                </p>
+
+                <p style="
+                  margin:0;
+                  color:#E4E4E7;
+                  line-height:28px;
+                  font-size:16px;
+                  white-space:pre-wrap;
+                ">
+                  ${escapeHtml(mensaje)}
+                </p>
+              </div>
+
+              <p style="
+                color:#A1A1AA;
+                line-height:28px;
+                font-size:16px;
+                margin-top:24px;
+              ">
+                Nuestro equipo está revisando tu solicitud y
+                se pondrá en contacto contigo en breve.
               </p>
 
               <div style="
@@ -215,14 +348,14 @@ export async function POST(req: Request) {
                   font-size:12px;
                   letter-spacing:2px;
                 ">
-                  STATUS
+                  ESTADO
                 </p>
 
                 <h2 style="
                   margin:12px 0 0;
                   color:white;
                 ">
-                  Pending Review
+                  Revisión pendiente
                 </h2>
               </div>
             </div>
@@ -240,7 +373,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error:
-          "Error sending confirmation emails",
+          "Error al enviar los correos de confirmación",
       },
       { status: 500 }
     );

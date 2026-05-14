@@ -415,9 +415,9 @@
     "location": "Ubicación",
     "locationAddress": "Calle Homero No. 203, Oficina 804, Piso 8, Polanco V Sección, Miguel Hidalgo, CP 11560, CDMX, México",
     "copyright": "© 2024 Plataforma Tecnológica. Contenidos protegidos.",
-    "privacy": "Privacidad",
-    "refund": "Reembolsos",
-    "terms": "Condiciones"
+    "privacy": "Política de Privacidad",
+    "refund": "Política de devoluciones y reembolsos",
+    "terms": "Términos y Condiciones"
   },
   "cartDrawer": {
     "activeServices": "Selección actual",

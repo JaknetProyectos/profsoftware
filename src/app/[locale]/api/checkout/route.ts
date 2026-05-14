@@ -77,7 +77,7 @@ function businessEmailHtml(
               </div>
 
               <div style="font-size:13px;color:#A1A1AA;margin-top:4px;">
-                Quantity: ${escapeHtml(
+                Cantidad: ${escapeHtml(
                   item.quantity
                 )}
               </div>
@@ -95,7 +95,7 @@ function businessEmailHtml(
       : `
         <tr>
           <td colspan="2" style="padding:12px 0;color:#9ca3af;">
-            No items found.
+            No se encontraron artículos.
           </td>
         </tr>
       `;
@@ -110,11 +110,11 @@ function businessEmailHtml(
         </div>
 
         <h1 style="margin:14px 0 0;font-size:38px;line-height:1;color:#fff;">
-          New Checkout Confirmed
+          Nueva compra confirmada
         </h1>
 
         <p style="margin:14px 0 0;color:#F3E8FF;font-size:15px;line-height:1.7;">
-          A new order has been processed successfully.
+          Se ha procesado correctamente una nueva orden.
         </p>
       </div>
 
@@ -122,7 +122,7 @@ function businessEmailHtml(
 
         <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:22px;margin-bottom:28px;">
           <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#C084FC;margin-bottom:12px;">
-            Customer Information
+            Información del cliente
           </div>
 
           <div style="font-size:18px;font-weight:700;color:#fff;">
@@ -166,7 +166,7 @@ function businessEmailHtml(
 
           <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:20px;">
             <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#A1A1AA;">
-              Order ID
+              ID de la orden
             </div>
 
             <div style="margin-top:10px;font-size:18px;font-weight:700;color:#fff;">
@@ -176,7 +176,7 @@ function businessEmailHtml(
 
           <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:20px;">
             <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#A1A1AA;">
-              Transaction Reference
+              Referencia de transacción
             </div>
 
             <div style="margin-top:10px;font-size:16px;font-weight:700;color:#fff;">
@@ -192,7 +192,7 @@ function businessEmailHtml(
         <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:22px;margin-bottom:28px;">
 
           <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#C084FC;margin-bottom:18px;">
-            Purchased Services
+            Servicios adquiridos
           </div>
 
           <table style="width:100%;border-collapse:collapse;">
@@ -210,7 +210,7 @@ function businessEmailHtml(
           </div>
 
           <div style="display:flex;justify-content:space-between;color:#A1A1AA;margin-bottom:10px;">
-            <span>VAT (16%)</span>
+            <span>IVA (16%)</span>
             <span>${formatMoney(
               data.vat
             )}</span>
@@ -245,7 +245,7 @@ function clientEmailHtml(
               </div>
 
               <div style="font-size:13px;color:#A1A1AA;margin-top:4px;">
-                Quantity: ${escapeHtml(
+                Cantidad: ${escapeHtml(
                   item.quantity
                 )}
               </div>
@@ -263,7 +263,7 @@ function clientEmailHtml(
       : `
         <tr>
           <td colspan="2" style="padding:12px 0;color:#9ca3af;">
-            No items found.
+            No se encontraron artículos.
           </td>
         </tr>
       `;
@@ -274,15 +274,15 @@ function clientEmailHtml(
 
       <div style="background:linear-gradient(135deg,#7C3AED 0%,#EC4899 100%);padding:42px 36px;">
         <div style="font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#F5D0FE;">
-          PLATAFORMA TECNOLÓGICA SYSTEM
+          PLATAFORMA TECNOLÓGICA
         </div>
 
         <h1 style="margin:14px 0 0;font-size:38px;line-height:1;color:#fff;">
-          Payment Receipt
+          Comprobante de pago
         </h1>
 
         <p style="margin:14px 0 0;color:#F3E8FF;font-size:15px;line-height:1.7;">
-          Your transaction has been processed successfully.
+          Tu transacción ha sido procesada correctamente.
         </p>
       </div>
 
@@ -290,7 +290,7 @@ function clientEmailHtml(
 
         <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:22px;margin-bottom:28px;">
           <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#C084FC;margin-bottom:12px;">
-            Customer Information
+            Información del cliente
           </div>
 
           <div style="font-size:18px;font-weight:700;color:#fff;">
@@ -318,7 +318,7 @@ function clientEmailHtml(
 
           <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:20px;">
             <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#A1A1AA;">
-              Order ID
+              ID de la orden
             </div>
 
             <div style="margin-top:10px;font-size:18px;font-weight:700;color:#fff;">
@@ -328,7 +328,7 @@ function clientEmailHtml(
 
           <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:20px;">
             <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#A1A1AA;">
-              Transaction Reference
+              Referencia de transacción
             </div>
 
             <div style="margin-top:10px;font-size:16px;font-weight:700;color:#fff;">
@@ -344,7 +344,7 @@ function clientEmailHtml(
         <div style="background:#18181B;border:1px solid #27272A;border-radius:18px;padding:22px;margin-bottom:28px;">
 
           <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#C084FC;margin-bottom:18px;">
-            Purchased Services
+            Servicios adquiridos
           </div>
 
           <table style="width:100%;border-collapse:collapse;">
@@ -362,14 +362,14 @@ function clientEmailHtml(
           </div>
 
           <div style="display:flex;justify-content:space-between;color:#A1A1AA;margin-bottom:10px;">
-            <span>VAT (16%)</span>
+            <span>IVA (16%)</span>
             <span>${formatMoney(
               data.vat
             )}</span>
           </div>
 
           <div style="display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid #27272A;font-size:22px;font-weight:700;color:#fff;">
-            <span>Total Paid</span>
+            <span>Total pagado</span>
             <span>${formatMoney(
               data.total
             )}</span>
@@ -378,8 +378,8 @@ function clientEmailHtml(
 
         <div style="margin-top:32px;text-align:center;">
           <p style="color:#71717A;font-size:13px;line-height:1.8;margin:0;">
-            Thank you for trusting on Plataforma Tecnológica.<br />
-            Our team will contact you shortly to begin your project.
+            Gracias por confiar en Plataforma Tecnológica.<br />
+            Nuestro equipo se pondrá en contacto contigo en breve para comenzar tu proyecto.
           </p>
         </div>
       </div>
@@ -413,7 +413,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           error:
-            "Missing required checkout data",
+            "Faltan datos obligatorios del checkout",
         },
         { status: 400 }
       );
@@ -441,7 +441,7 @@ export async function POST(req: Request) {
           from: fromEmail,
           to: businessEmail,
           replyTo: customer.email,
-          subject: `New sale confirmed - ${orderId}`,
+          subject: `Nueva venta confirmada - ${orderId}`,
           html: businessEmailHtml(
             {
               amount,
@@ -460,7 +460,7 @@ export async function POST(req: Request) {
         resend.emails.send({
           from: fromEmail,
           to: customer.email,
-          subject: `Payment confirmed - ${orderId}`,
+          subject: `Pago confirmado - ${orderId}`,
           html: clientEmailHtml(
             {
               amount,
@@ -504,7 +504,7 @@ export async function POST(req: Request) {
       {
         error:
           error?.message ||
-          "Payment processing failed",
+          "Error al procesar el pago",
       },
       { status: 500 }
     );

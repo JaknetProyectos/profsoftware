@@ -197,21 +197,21 @@ export default function Footer() {
 
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               <Link
-                href="#"
+                href="/legal/privacidad"
                 className="text-gray-400 hover:text-[#6dffb3] transition-colors"
               >
                 {t("privacy")}
               </Link>
 
               <Link
-                href="#"
+                href="/legal/reembolsos"
                 className="text-gray-400 hover:text-[#ff5f1f] transition-colors"
               >
                 {t("refund")}
               </Link>
 
               <Link
-                href="#"
+                href="/legal/terminos"
                 className="text-gray-400 hover:text-[#ff4f5e] transition-colors"
               >
                 {t("terms")}

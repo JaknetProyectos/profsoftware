@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
+import { Box } from "lucide-react";
 
 export default function StartProject() {
   const t = useTranslations("startProject");
@@ -53,7 +54,7 @@ export default function StartProject() {
         "en-US"
       )} USD`,
       priceNumber: amountNumber,
-      icon: "💻",
+      icon: Box,
     });
 
     openCart();

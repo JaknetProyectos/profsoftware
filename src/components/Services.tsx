@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
 import { servicesEnglish, servicesSpanish } from "@/lib/services";
 import { LucideIcon } from "lucide-react";
+import ServiceModal from "./ServiceModal";
 
 type Service = {
   id: string;
@@ -11,6 +12,7 @@ type Service = {
   price: string;
   priceNumber: number;
   icon: LucideIcon;
+  description: string[];
 };
 
 export default function Services() {
@@ -28,7 +30,7 @@ export default function Services() {
       name: service.name,
       price: service.price,
       priceNumber: service.priceNumber,
-      icon: service.icon.name,
+      icon: service.icon,
     });
   };
 
@@ -101,10 +103,9 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Content */}
-                <h3 className="font-syne font-semibold text-xl text-white leading-snug mb-4 min-h-[56px]">
-                  {service.name}
-                </h3>
+                {/* Content  debe clickear aquí para soltar el modal page simulator */}
+                
+                <ServiceModal service={service} />
 
                 {/* Price */}
                 <div className="mb-6">

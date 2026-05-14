@@ -5,6 +5,7 @@ import { useCart } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useTranslations } from "next-intl";
+import { Box, Pencil } from "lucide-react";
 
 export default function CustomProjectPage() {
   const { addItem, openCart } = useCart();
@@ -53,7 +54,7 @@ export default function CustomProjectPage() {
         : t("cart.defaultProjectName"),
       price: `$${amountNumber.toLocaleString("en-US")} USD`,
       priceNumber: amountNumber,
-      icon: "💻",
+      icon: Box,
     };
 
     addItem(customProduct);

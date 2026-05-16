@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { AlertProvider } from '@/context/AlertContext';
 import CartDrawer from '@/components/CartDrawer';
+import { LocaleProvider } from '@/context/LangContext';
 
 
 export default async function LocaleLayout({
@@ -30,12 +31,14 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
       <ClientBody>
-        <CartProvider>
-          <AlertProvider>
-            <CartDrawer />
-            {children}
-          </AlertProvider>
-        </CartProvider>
+        <LocaleProvider>
+          <CartProvider>
+            <AlertProvider>
+              <CartDrawer />
+              {children}
+            </AlertProvider>
+          </CartProvider>
+        </LocaleProvider>
       </ClientBody>
     </NextIntlClientProvider>
   );

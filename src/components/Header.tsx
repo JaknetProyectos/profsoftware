@@ -18,6 +18,7 @@ import {
   usePathname,
   useRouter,
 } from "@/i18n/routing";
+import { useLocaleContext } from "@/context/LangContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] =
@@ -26,19 +27,14 @@ export default function Header() {
   const [isLangOpen, setIsLangOpen] =
     useState(false);
 
-  const [isPending, startTransition] =
-    useTransition();
 
   const { totalItems, toggleCart } =
     useCart();
 
   const t = useTranslations("Header");
 
-  const locale = useLocale();
+  const { locale, switchLanguage, isPending } = useLocaleContext();
 
-  const router = useRouter();
-
-  const pathname = usePathname();
 
   const languages = [
     {
@@ -53,17 +49,6 @@ export default function Header() {
     },
   ];
 
-  const switchLanguage = (
-    nextLocale: string
-  ) => {
-    startTransition(() => {
-      router.replace(pathname, {
-        locale: nextLocale,
-      });
-    });
-
-    setIsLangOpen(false);
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 border-b border-[#7C3AED]/30 bg-[#0B0B14]/85 backdrop-blur-xl">
@@ -162,11 +147,10 @@ export default function Header() {
                 </span>
 
                 <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${
-                    isLangOpen
+                  className={`w-4 h-4 transition-transform duration-300 ${isLangOpen
                       ? "rotate-180"
                       : ""
-                  }`}
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -193,12 +177,11 @@ export default function Header() {
                             language.code
                           )
                         }
-                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${
-                          locale ===
-                          language.code
+                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${locale ===
+                            language.code
                             ? "bg-[#7C3AED]/20 text-white"
                             : "text-white/75 hover:bg-white/5 hover:text-white"
-                        }`}
+                          }`}
                       >
                         <span>
                           {
@@ -312,12 +295,11 @@ export default function Header() {
                             language.code
                           )
                         }
-                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${
-                          locale ===
-                          language.code
+                        className={`flex w-full items-center gap-3 px-4 py-3 text-sm transition-all duration-200 ${locale ===
+                            language.code
                             ? "bg-[#7C3AED]/20 text-white"
                             : "text-white/75 hover:bg-white/5 hover:text-white"
-                        }`}
+                          }`}
                       >
                         <span>
                           {

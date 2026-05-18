@@ -159,7 +159,13 @@ export function useLocaleContext() {
 
 
 /**
+ * En [locale]/layout.tsx 
+ * <LocaleProvider>
+ *  ..... resto de context
+ * </LocaleProvider>
  * 
+ * Luego en el header o donde venga el lang switcher
  * const { locale, switchLanguage, isPending } = useLocaleContext();
- * switchLanguage(language.code)
+ * 
+ * onclick =  switchLanguage(language.code)
  */

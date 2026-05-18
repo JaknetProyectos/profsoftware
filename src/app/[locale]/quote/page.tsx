@@ -52,7 +52,7 @@ export default function CustomProjectPage() {
             service: formData.service,
           })
         : t("cart.defaultProjectName"),
-      price: `$${amountNumber.toLocaleString("en-US")} USD`,
+      price: `${amountNumber.toLocaleString("")}`,
       priceNumber: amountNumber,
       icon: Box,
     };

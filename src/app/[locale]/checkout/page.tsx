@@ -10,7 +10,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useCart } from "@/context/CartContext";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 

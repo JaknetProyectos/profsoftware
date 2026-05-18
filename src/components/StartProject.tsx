@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/context/CartContext";
 import { Box } from "lucide-react";
@@ -50,9 +50,7 @@ export default function StartProject() {
       name: paymentData.quoteId
         ? `${t("cart.quotePrefix")} #${paymentData.quoteId}`
         : t("cart.customPayment"),
-      price: `$${amountNumber.toLocaleString(
-        "en-US"
-      )} USD`,
+      price: `$${amountNumber.toLocaleString()} MXN`,
       priceNumber: amountNumber,
       icon: Box,
     });

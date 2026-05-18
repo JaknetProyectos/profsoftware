@@ -95,7 +95,7 @@
       "increaseQuantity": "Increase quantity"
     },
     "errors": {
-      "paymentFailed": "No se pudo completar el pago",
+      "paymentFailed": "Cannot complete the payment",
       "unknown": "Unknown error"
     }
   },
@@ -431,5 +431,10 @@
     "vatMessage": "VAT (16%) will be calculated during checkout.",
     "checkout": "Proceed to Checkout",
     "continueShopping": "Continue Shopping"
+  },
+  "serviceModal": {
+    "vatIncluded": "MXN · VAT included",
+    "addToCart": "Add to cart",
+    "description": "Description"
   }
 }

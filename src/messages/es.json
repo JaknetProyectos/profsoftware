@@ -403,7 +403,7 @@
       }
     }
   },
-   "footer": {
+  "footer": {
     "subtitle": "Servicios Tecnológicos",
     "description": "Desarrollo de software enfocado en la funcionalidad y la seguridad, diseñado para aportar valor a la operación de empresas contemporáneas.",
     "officeTitle": "Sede Ciudad de México",
@@ -431,5 +431,10 @@
     "vatMessage": "Los impuestos correspondientes se desglosarán en el paso final.",
     "checkout": "Confirmar servicios",
     "continueShopping": "Añadir más"
+  },
+  "serviceModal": {
+    "vatIncluded": "MXN · IVA incluido",
+    "addToCart": "Agregar al carrito",
+    "description": "Descripción"
   }
 }

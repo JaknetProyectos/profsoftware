@@ -20,6 +20,8 @@ import Footer from "./Footer";
 
 import { useCart } from "@/context/CartContext";
 
+import { useTranslations } from "next-intl";
+
 interface ServiceModalProps {
   service: {
     id: string;
@@ -36,6 +38,8 @@ interface ServiceModalProps {
 export default function ServiceModal({
   service,
 }: ServiceModalProps) {
+  const t = useTranslations("serviceModal");
+
   const { addItem } = useCart();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -139,7 +143,7 @@ export default function ServiceModal({
                 </span>
 
                 <span className="pb-2 text-zinc-400">
-                  MXN · IVA incluido
+                  {t("vatIncluded")}
                 </span>
               </div>
 
@@ -177,7 +181,7 @@ export default function ServiceModal({
                 >
                   <ShoppingBag className="w-5 h-5" />
 
-                  Agregar al carrito
+                  {t("addToCart")}
                 </button>
               </div>
             </div>
@@ -185,7 +189,7 @@ export default function ServiceModal({
             {/* Right */}
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 backdrop-blur-2xl">
               <h2 className="text-3xl font-bold text-white mb-8 font-syne">
-                Description
+                {t("description")}
               </h2>
 
               <div className="space-y-5">

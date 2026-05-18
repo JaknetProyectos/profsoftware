@@ -5,7 +5,7 @@ import {
   useTransition,
 } from "react";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import { useCart } from "@/context/CartContext";
 

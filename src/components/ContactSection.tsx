@@ -165,7 +165,7 @@ export default function ContactSection() {
                   </p>
 
                   <p className="text-white font-medium">
-                    +52 55 2120 8017
+                    +52 55 5244 5668
                   </p>
                 </div>
               </a>

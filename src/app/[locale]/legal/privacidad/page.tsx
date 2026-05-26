@@ -51,7 +51,7 @@ function LegalEs() {
                     <li>Descripción clara de los datos sobre los que desea ejercer los derechos ARCO.  </li>
                     <li>Domicilio o medio electrónico para recibir notificaciones.<br />La Empresa responderá en un plazo máximo de 20 días hábiles, contados a partir de la recepción de la solicitud, notificando al titular sobre la procedencia de la misma.<br /><strong>VII. Revocación del consentimiento</strong><br />En cualquier momento el titular podrá revocar el consentimiento otorgado para el tratamiento de sus datos personales, siempre que ello no implique el incumplimiento de obligaciones legales o contractuales. La solicitud deberá enviarse al correo electrónico de contacto, y será atendida conforme al procedimiento establecido para el ejercicio de derechos ARCO.<br /><strong>VIII. Uso de cookies y tecnologías similares</strong><br />El Sitio Web podrá utilizar cookies, web beacons y tecnologías similares con el propósito de mejorar la experiencia del usuario, analizar patrones de navegación y facilitar funcionalidades. El usuario podrá deshabilitar el uso de estas tecnologías desde la configuración de su navegador, aunque ello podría afectar el correcto funcionamiento del Sitio Web.  </li>
                     <li><strong>Modificaciones al aviso de privacidad</strong><br />La Empresa se reserva el derecho de actualizar o modificar el presente Aviso de Privacidad en cualquier momento, para adaptarlo a cambios legislativos, regulatorios o internos. Cualquier modificación será publicada en el Sitio Web <a href="https://creativaworks.com/" title="https://creativaworks.com/">plataformatecnologica.com</a> en la sección correspondiente, surtiendo efectos a partir de su publicación.  </li>
-                    <li><strong>Contacto</strong><br />Para cualquier duda o aclaración relacionada con el presente Aviso de Privacidad, así como para el ejercicio de los derechos que la ley le confiere, el titular podrá comunicarse al correo electrónico <a href="mailto:aquiestamos@creativaworks.com" title="mailto:aquiestamos@creativaworks.com">gestion@plataformatecnologica.com</a> o llamar al teléfono + 52 1 55 2120 8017.  </li>
+                    <li><strong>Contacto</strong><br />Para cualquier duda o aclaración relacionada con el presente Aviso de Privacidad, así como para el ejercicio de los derechos que la ley le confiere, el titular podrá comunicarse al correo electrónico <a href="mailto:aquiestamos@creativaworks.com" title="mailto:aquiestamos@creativaworks.com">gestion@plataformatecnologica.com</a> o llamar al teléfono + 52 1 55 5244 5668.  </li>
                 </ol>
 
 
@@ -204,7 +204,7 @@ function LegalEn() {
                         <a href="mailto:gestion@plataformatecnologica.com" title="mailto:gestion@plataformatecnologica.com">
                             gestion@plataformatecnologica.com
                         </a>
-                        or by phone at +52 1 55 2120 8017.
+                        or by phone at +52 1 55 5244 5668.
                     </li>
                 </ol>
 

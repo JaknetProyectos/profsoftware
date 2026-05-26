@@ -166,7 +166,7 @@ export default function Footer() {
                     href="tel:+525521208017"
                     className="text-white hover:text-[#ff5f1f] transition-colors text-lg font-medium"
                   >
-                    +52 55 2120 8017
+                    +52 55 5244 5668
                   </a>
                 </div>
 

@@ -106,6 +106,10 @@ export async function processOctanoPayment(payment: PaymentData) {
       config
     );
 
+    if (saleResponse.data.status != "APPROVED") {
+      throw new Error("Pago rechazado")
+    }
+
     return saleResponse.data;
   } catch (error: any) {
     const errorDetail = error?.response?.data || error?.message;

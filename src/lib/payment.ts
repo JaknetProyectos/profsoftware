@@ -1,9 +1,16 @@
-"use server";
+'use server';
 
-import axios from "axios";
+import axios from 'axios';
+
+// export interface PaymentData {
+//   amount: number;
+
+
 
 export interface PaymentData {
   amount: number;
+  orderId: string;
+
   cardData: {
     number: string;
     name: string;
@@ -11,113 +18,126 @@ export interface PaymentData {
     year: string;
     cvv: string;
   };
+
   customer: {
     name: string;
     lastname: string;
     email: string;
     telefono: string;
     direccion: string;
-    cp: string;
+    direccion2?: string;
     city: string;
     state: string;
-    country: string;
+    country?: string;
+    cp: string;
+    empresa?: string;
   };
-  orderId: string;
+
+  metadata?: {
+    ip?: string;
+    deviceId?: string;
+    notes?: string;
+  };
 }
 
-const OCTANO_BASE_URL = "https://pagos.octanopayments.com/api/v1";
+const API_URL = "https://pagos.etomin.com/api/v1";
 
-export async function processOctanoPayment(payment: PaymentData) {
-  try {
-    if (!process.env.OCTANO_USER || !process.env.OCTANO_PASSWORD) {
-      throw new Error("Faltan credenciales de Octano en variables de entorno");
-    }
+// Instancia global con los headers base que exige Etomin
+const etominClient = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'accept': 'application/json',
+    'content-type': 'application/json',
+  },
+});
 
-    const authResponse = await axios.post(
-      `${OCTANO_BASE_URL}/signin`,
-      {
-        email: process.env.OCTANO_USER,
-        password: process.env.OCTANO_PASSWORD,
+async function getAuthToken(): Promise<string> {
+  const { data } = await etominClient.post('/signin', {
+    email: process.env.ETOMIN_USER,
+    password: process.env.ETOMIN_PASSWORD,
+  });
+
+  return data.authToken;
+}
+
+async function tokenizeCard(token: string, payment: PaymentData): Promise<string> {
+  const card = payment.cardData;
+
+  const { data } = await etominClient.post(
+    '/card/tokenizer',
+    {
+      cardData: {
+        cardNumber: card.number.replace(/\s/g, ''), // Limpiar espacios
+        cardholderName: card.name,
+        expirationYear: card.year,
+        expirationMonth: card.month,
       },
-      {
-        headers: {
-          accept: "application/json",
-          "content-type": "application/json",
-        },
-      }
-    );
-
-    const authToken = authResponse.data?.authToken;
-
-    if (!authToken) {
-      throw new Error("No se pudo obtener el token de Octano");
+    },
+    {
+      headers: { Authorization: `Bearer ${token}` },
     }
+  );
 
-    const config = {
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        Authorization: `Bearer ${authToken}`,
+  return data.cardNumberToken;
+}
+
+export async function processEtominPayment(payment: PaymentData) {
+  try {
+    // 1. Autenticación
+    const authToken = await getAuthToken();
+
+    // 2. Tokenización de la tarjeta (Sin el CVV)
+    const cardToken = await tokenizeCard(authToken, payment);
+
+    // 3. Ejecución de la Venta
+    const salePayload = {
+      amount: Number(payment.amount),
+      currency: "484", // MXN
+      reference: payment.orderId,
+
+      customerInformation: {
+        firstName: payment.customer.name,
+        lastName: payment.customer.lastname,
+        email: payment.customer.email,
+        phone1: payment.customer.telefono,
+        address1: payment.customer.direccion,
+        address2: payment.customer.direccion2 || "",
+        city: payment.customer.city,
+        state: payment.customer.state,
+        postalCode: payment.customer.cp,
+        country: payment.customer.country || "MX",
+        company: payment.customer.empresa || "",
+        ip: payment.metadata?.ip || "127.0.0.1",
+      },
+
+      cardData: {
+        cardNumberToken: cardToken,
+        cvv: payment.cardData.cvv,
       },
     };
 
-    const tokenResponse = await axios.post(
-      `${OCTANO_BASE_URL}/card/tokenizer`,
-      {
-        cardData: {
-          cardNumber: payment.cardData.number.replace(/\s/g, ""),
-          cardholderName: payment.cardData.name,
-          expirationYear: payment.cardData.year,
-          expirationMonth: payment.cardData.month,
-        },
-      },
-      config
-    );
+    const { data } = await etominClient.post('/sale', salePayload, {
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
 
-    const cardToken = tokenResponse.data?.cardNumberToken;
+    // Validamos el estatus de forma insensible a mayúsculas/minúsculas ("approved" / "APPROVED")
+    const isApproved = data.status?.toUpperCase() === "APPROVED";
 
-    if (!cardToken) {
-      throw new Error("No se pudo tokenizar la tarjeta");
-    }
+    return {
+      success: isApproved,
+      orderId: data.orderId,
+      reference: data.reference,
+      transactionId: data.transactionId,
+      status: data.status,
+      data: data,
+    };
 
-    const saleResponse = await axios.post(
-      `${OCTANO_BASE_URL}/sale`,
-      {
-        amount: payment.amount,
-        currency: "484", // MXN
-        reference: payment.orderId,
-        customerInformation: {
-          firstName: payment.customer.name,
-          lastName: payment.customer.lastname,
-          email: payment.customer.email,
-          phone1: payment.customer.telefono,
-          city: payment.customer.city,
-          address1: payment.customer.direccion,
-          postalCode: payment.customer.cp,
-          state: payment.customer.state,
-          country: payment.customer.country,
-          ip: "127.0.0.1",
-        },
-        cardData: {
-          cardNumberToken: cardToken,
-          cvv: payment.cardData.cvv,
-        },
-      },
-      config
-    );
-
-    if (saleResponse.data.status != "APPROVED") {
-      throw new Error("Pago rechazado")
-    }
-
-    return saleResponse.data;
   } catch (error: any) {
-    const errorDetail = error?.response?.data || error?.message;
-    console.error("❌ Error en pasarela Octano:", errorDetail);
-
-    throw new Error(
-      error?.response?.data?.message ||
-        "Hubo un problema al procesar la transacción con Octano."
-    );
+    console.error("Etomin Payment Error:", error.response?.data || error.message);
+    return {
+      success: false,
+      status: "error",
+      error: error.response?.data?.message || "Error procesando el pago con Etomin",
+    };
   }
 }

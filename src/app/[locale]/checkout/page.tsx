@@ -767,11 +767,11 @@ export default function CheckoutPage() {
                       className=""
                     />
                     <Image
-                      src="/octano.png"
+                      src="/etomin.png"
                       alt={t("paymentMethods.octano")}
                       width={150}
                       height={40}
-                      className=""
+                      className="brightness-0 invert"
                     />
                   </div>
 

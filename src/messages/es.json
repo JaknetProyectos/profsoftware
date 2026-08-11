@@ -73,7 +73,7 @@
     "paymentMethods": {
       "visa": "Visa",
       "mastercard": "Mastercard",
-      "octano": "Octano"
+      "octano": "Etomin"
     },
     "actions": {
       "returnHome": "Volver a inicio",
